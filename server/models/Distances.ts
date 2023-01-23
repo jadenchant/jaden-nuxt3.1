@@ -32,4 +32,4 @@ const distanceSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Distance", distanceSchema, "distance");
+export default mongoose.model("Distances", distanceSchema, "distances");
