@@ -1,10 +1,10 @@
-import { flights } from "~~/server/models";
+import { Flights } from "~~/server/models";
 
 export default defineEventHandler(async (event) => {
   console.log("Get Flights")
   
   try {
-    const data = await flights.getFlightsPrev();
+    const data = await Flights.getFlightsPrev();
     return data.map((flight) => ({
       flights: flight.flights,
       units: flight.units

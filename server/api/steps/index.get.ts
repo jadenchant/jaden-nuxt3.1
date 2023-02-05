@@ -1,10 +1,10 @@
-import { steps } from "~~/server/models";
+import { Steps } from "~~/server/models";
 
 export default defineEventHandler(async (event) => {
   console.log("Get Steps")
   
   try {
-    const data = await steps.getStepsPrev();
+    const data = await Steps.getStepsPrev();
     return data.map((step) => ({
       steps: step.steps,
       units: step.units

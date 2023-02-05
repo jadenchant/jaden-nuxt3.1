@@ -1,10 +1,10 @@
-import { distances } from "~~/server/models";
+import { Distances } from "~~/server/models";
 
 export default defineEventHandler(async (event) => {
   console.log("Get Distance")
   
   try {
-    const data = await distances.getDistancePrev();
+    const data = await Distances.getDistancePrev();
     return data.map((dist) => ({
       distance: dist.distance,
       units: dist.units
