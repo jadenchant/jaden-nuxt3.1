@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": ".output/public",
+    "functions": { "source": ".output/server" },
     "hosting": [
       {
         "site": "jaden-nuxt",
