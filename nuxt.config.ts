@@ -1,4 +1,3 @@
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
@@ -6,6 +5,6 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    plugins: ["~/server/index.ts"]
-  }
-})
+    plugins: ['~/server/index.ts'],
+  },
+});
