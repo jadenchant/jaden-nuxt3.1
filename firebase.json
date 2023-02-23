@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "runtime": "nodejs16",
-    "predeploy": ["npm --prefix \"$RESOURCE_DIR\" install"],
-    "source": ".output/server"
-  },
   "hosting": [
     {
       "site": "jaden-nuxt",
