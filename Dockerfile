@@ -32,5 +32,7 @@ ENV NUXT_APP_VERSION=${NUXT_APP_VERSION}
 # Run in production mode
 ENV NODE_ENV=production
 
+ENV MONGO_URL=mongodb+srv://jadenmchant:2kRMec0i97n2VFs2@jaden-nuxt.qpn0jdf.mongodb.net/health
+
 # start the app
 CMD [ "node", "/app/.output/server/index.mjs" ]
