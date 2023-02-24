@@ -1,4 +1,5 @@
 {
+  "functions": { "runtime": "nodejs16", "source": ".output/server" },
   "hosting": [
     {
       "site": "jaden-nuxt",
