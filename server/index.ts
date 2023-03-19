@@ -2,8 +2,6 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
 dotenv.config();
-
-// const config = useRuntimeConfig();
 mongoose.set('strictQuery', false);
 
 export default async () => {

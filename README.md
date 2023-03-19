@@ -4,39 +4,10 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
-Make sure to install the dependencies:
+Autodeploy to cloud run
 
-```bash
-# yarn
-yarn install
+_Do not make repo public_
 
-# npm
-npm install
+Nuxt version 3.3 (NEED Node v18.15.0)
 
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Previous Nuxt version 3.0 worked with any Node v16.14.2
