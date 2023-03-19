@@ -8,4 +8,12 @@ export default defineNuxtConfig({
     preset: 'node-server',
     plugins: ['~/server/index.ts'],
   },
+
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 });
