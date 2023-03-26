@@ -3,8 +3,8 @@
   <h2>This is epic</h2>
 </template>
 
-<style>
-h1 {
-  font-size: 50px;
-}
-</style>
+<script setup>
+definePageMeta({
+  title: 'About',
+});
+</script>

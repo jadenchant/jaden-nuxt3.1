@@ -11,5 +11,10 @@ module.exports = {
   theme: {
     extend: {},
   },
+  extend: {
+    fontFamily: {
+      TitilliumWeb: ['TitilliumWeb'],
+    },
+  },
   plugins: [],
 };

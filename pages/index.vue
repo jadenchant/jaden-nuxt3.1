@@ -4,3 +4,9 @@
     <h2 class="text-xl">Now using Tailwind</h2>
   </div>
 </template>
+
+<script setup>
+definePageMeta({
+  title: 'Home',
+});
+</script>
