@@ -5,8 +5,4 @@
   </div>
 </template>
 
-<script setup>
-definePageMeta({
-  title: 'Home',
-});
-</script>
+<script setup></script>

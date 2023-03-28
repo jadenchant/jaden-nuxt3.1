@@ -1,18 +1,11 @@
 <template>
   <div>
-    <header>
-      <nav>
-        <NuxtLink to="/">Jaden Chant</NuxtLink>
-
-        <ul>
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/about">About</NuxtLink></li>
-        </ul>
-      </nav>
-    </header>
-
+    <Header />
     <div>
       <slot />
     </div>
+    <Footer />
   </div>
 </template>
+
+<script setup></script>

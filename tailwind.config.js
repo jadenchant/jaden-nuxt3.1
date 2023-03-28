@@ -13,7 +13,7 @@ module.exports = {
   },
   extend: {
     fontFamily: {
-      TitilliumWeb: ['TitilliumWeb'],
+      TitilliumWeb: ['TitilliumWeb', 'sans-serif'],
     },
   },
   plugins: [],
