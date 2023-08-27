@@ -1,4 +1,4 @@
-import { Distances, Flights, Steps } from '~~/server/models';
+import { Distances, Flights, Steps } from '../../models';
 import round from '../../functions/round';
 
 // Check for duplicate data

@@ -8,14 +8,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-28200790.d820607",
     "autoprefixer": "^10.4.14",
-    "nuxt": "^3.3.1",
+    "nuxt": "^3.7.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
-    "firebase": "^9.17.1",
     "mongoose": "^6.8.4"
   }
 }
