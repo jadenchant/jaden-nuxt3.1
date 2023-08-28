@@ -10,8 +10,6 @@ Nuxt version 3.3 (NEED `node v18.15.0`)
 
 Previous Nuxt version 3.0 worked with any `node v16.14.2`
 
-_Do not make repo public_
-
 ## Dev environment
 
 To run dev use the command `npx nuxi dev`

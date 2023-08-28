@@ -9,6 +9,8 @@ export default defineNuxtConfig({
     plugins: ['~/server/index.ts'],
   },
 
+  modules: ['nuxt-icons'],
+
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
