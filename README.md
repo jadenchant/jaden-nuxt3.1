@@ -4,7 +4,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
-Autodeploy to cloud run
+Autodeploy to cloud run (not firebase)
 
 Nuxt version 3.3 (NEED `node v18.15.0`)
 
@@ -14,4 +14,4 @@ _Do not make repo public_
 
 ## Dev environment
 
-To run dev use the command `npm run dev`
+To run dev use the command `npx nuxi dev`

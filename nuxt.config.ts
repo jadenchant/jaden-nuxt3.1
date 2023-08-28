@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from '@nuxt/bridge';
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
