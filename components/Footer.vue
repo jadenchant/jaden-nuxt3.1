@@ -1,8 +1,8 @@
 <template>
-  <div class="absolute bottom-0 p-2 w-full text-center">
-    <p class="inline-block p-2">Made with</p>
-    <NuxtLink to="https://nuxt.com/" target="_blank" class="inline-block">
-      <img src="/img/nuxt.png" alt="Nuxt3 Logo" class="inline-block h-6" />
+  <div class="flex absolute bottom-0 justify-center align-middle p-4 w-full">
+    <p class="mr-2 mt-1">Made with</p>
+    <NuxtLink to="https://nuxt.com/" target="_blank" class="flex items-center">
+      <img src="/img/nuxt.png" alt="Nuxt3 Logo" class="h-5" />
     </NuxtLink>
   </div>
 </template>

@@ -33,5 +33,6 @@
 @layer base {
   html {
     font-family: 'TitilliumWeb', sans-serif;
+    color: #f0f0f0;
   }
 }

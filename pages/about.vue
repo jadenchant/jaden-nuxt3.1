@@ -1,6 +1,5 @@
 <template>
-  <h1>About</h1>
-  <h2>This is epic</h2>
+  <h2 class="text-xl">About content</h2>
 </template>
 
 <script setup>
