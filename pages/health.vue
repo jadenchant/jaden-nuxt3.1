@@ -1,4 +1,5 @@
 <template>
+  <title>Health Data</title>
   <div>
     <h2 class="text-xl">Health content</h2>
   </div>
