@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="w-full pl-6 pt-4">
+    <header class="w-full pl-6 py-4">
       <nav class="w-full flex z-20">
         <NuxtLink to="/" class="text-4xl font-bold mr-8">Jaden Chant</NuxtLink>
         <!-- <NuxtLink to="/" class="md:hidden text-4xl font-bold mr-8">JC</NuxtLink> -->
