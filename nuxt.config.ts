@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     plugins: ['~/server/index.ts'],
   },
 
-  modules: ['nuxt-icons', 'nuxt-scheduler'],
+  modules: ['nuxt-icons'],
 
   css: ['~/assets/css/main.css'],
   postcss: {
