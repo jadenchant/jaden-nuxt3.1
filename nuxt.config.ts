@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 
   modules: ['nuxt-icons'],
 
-  css: ['~/assets/css/main.css'],
+  css: ['@/assets/css/main.css'],
   postcss: {
     plugins: {
       tailwindcss: {},

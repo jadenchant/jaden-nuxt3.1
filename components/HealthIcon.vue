@@ -8,18 +8,19 @@
 
 <style>
 .nuxt-icon.heart svg {
-  width: 2.6em;
-  height: 2.6em;
+  width: 4.6em;
+  height: 4.6em;
+  margin-right: 2.2em;
 }
 
 .nuxt-icon.pulse svg {
-  width: 3.4em;
-  height: 1.2em;
+  width: 4.4em;
+  height: 1.7em;
 }
 
 .pulse {
   position: absolute;
-  top: 0.7em;
+  top: 1.2em;
   z-index: 10;
   color: #374151;
 }
@@ -30,7 +31,6 @@
 
 .pulse2 {
   animation: 1.6s linear 0.8s infinite running pulse;
-  left: -3.4em;
 }
 
 @keyframes pulse {
@@ -39,7 +39,7 @@
   }
 
   to {
-    left: 1.6em;
+    left: 3em;
   }
 }
 </style>

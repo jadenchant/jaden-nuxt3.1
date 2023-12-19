@@ -13,21 +13,23 @@
   font-family: 'TitilliumWeb';
   font-style: italic;
   font-weight: 300;
-  src: local(''), url('@/assets/fonts/TitilliumWeb-Italic.ttf') format('ttf');
+  src: local(''),
+    url('@/assets/fonts/TitilliumWeb-Italic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'TitilliumWeb';
   font-style: bold;
   font-weight: 500;
-  src: local(''), url('@/assets/fonts/TitilliumWeb-Bold.ttf') format('ttf');
+  src: local(''), url('@/assets/fonts/TitilliumWeb-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'TitilliumWeb';
   font-style: semibold;
   font-weight: 400;
-  src: local(''), url('@/assets/fonts/TitilliumWeb-SemiBold.ttf') format('ttf');
+  src: local(''),
+    url('@/assets/fonts/TitilliumWeb-SemiBold.ttf') format('truetype');
 }
 
 @layer base {

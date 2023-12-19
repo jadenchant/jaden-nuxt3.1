@@ -11,8 +11,8 @@ export default defineEventHandler(async (event) => {
     const data = body.data.metrics;
     //const {flights, steps, distance} = body.data
     const flights = data[0];
-    const steps = data[1];
-    const distance = data[2];
+    const distance = data[1];
+    const steps = data[2];
 
     const flightsData = new Flights({
       date: flights.data[0].date,
