@@ -4,7 +4,7 @@
     <h2 class="text-2xl mb-4">About Me</h2>
 
     <p>Current Student @ St. Olaf College</p>
-    <p></p>
+    <Face />
   </div>
 </template>
 
