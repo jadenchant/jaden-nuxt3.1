@@ -9,6 +9,8 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
     const data = body.data.metrics;
+    // console.log(data);
+    return { data };
     //const {flights, steps, distance} = body.data
     const flights = data[0];
     const steps = data[1];

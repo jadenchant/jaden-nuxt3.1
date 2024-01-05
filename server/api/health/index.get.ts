@@ -7,6 +7,7 @@ export default defineEventHandler(async (event) => {
     const distance = await Distances.getDistancePrev();
     const flights = await Flights.getFlightsPrev();
     const steps = await Steps.getStepsPrev();
+
     return {
       distance: distance.map((dist) => ({
         distance: dist.distance,
