@@ -9,12 +9,18 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
     const data = body.data.metrics;
-    // console.log(data);
-    return { data };
-    //const {flights, steps, distance} = body.data
-    const flights = data[0];
-    const steps = data[1];
-    const distance = data[2];
+
+    let flights, steps, distance;
+
+    for (let i = 0; i < 3; i++) {
+      if (data[i].name === 'flights_climbed') {
+        flights = data[i];
+      } else if (data[i].name === 'step_count') {
+        steps = data[i];
+      } else if (data[i].name === 'walking_running_distance') {
+        distance = data[i];
+      }
+    }
 
     const flightsData = new Flights({
       date: flights.data[0].date,
