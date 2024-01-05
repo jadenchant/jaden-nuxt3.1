@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from 'three';
+import {
+  BasicShadowMap,
+  NoToneMapping,
+  SRGBColorSpace,
+  MeshStandardMaterial,
+  Color,
+} from 'three';
 const { onLoop } = useRenderLoop();
 const gl = {
   clearColor: '#374151',
@@ -11,17 +17,31 @@ const gl = {
   toneMapping: NoToneMapping,
 };
 
-const model = shallowRef<THREE.Object3D>();
+const modelRef = shallowRef<THREE.Object3D>();
+
+// watch(modelRef, (model) => {
+//   model.value.position = new THREE.Vector3(1, 0, 1);
+// });
 
 watchEffect(() => {
-  console.log(model.value);
+  console.log(modelRef.value);
 });
 
 onLoop(({ delta, elapsed }) => {
-  if (model.value) {
-    model.value.value.rotation.y -= delta;
+  if (modelRef.value) {
+    modelRef.value.value.rotation.y -= delta;
   }
 });
+
+// const handleModelLoad = () => {
+//   modelRef.value.scene.traverse((child) => {
+//     if (child.isMesh) {
+//       child.material = new MeshStandardMaterial({
+//         color: new Color(0xffffff),
+//       });
+//     }
+//   });
+// };
 </script>
 
 <template>
@@ -35,9 +55,12 @@ onLoop(({ delta, elapsed }) => {
       />
       <TresAmbientLight :color="0xffffff" :intensity="0.75" />
       <TresDirectionalLight :position="[0, 8, 5]" :intensity="1" cast-shadow />
-      <Suspense>
-        <GLTFModel ref="model" path="/models/face.glb" draco />
-      </Suspense>
+      <TresMesh>
+        <Suspense>
+          <GLTFModel ref="modelRef" path="/models/face.glb" draco />
+        </Suspense>
+        <!-- <TresMeshBasicMaterial /> -->
+      </TresMesh>
     </TresCanvas>
   </div>
 </template>
