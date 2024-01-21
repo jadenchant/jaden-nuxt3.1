@@ -1,5 +1,7 @@
 # Nuxt 3 Jaden Chant
 
+Using Nuxt3, MongoDB, Auto Health Export, Tres.js, and Tailwind CSS
+
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
