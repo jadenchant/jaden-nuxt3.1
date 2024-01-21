@@ -2,8 +2,6 @@
 
 Using [Nuxt3](https://nuxt.com/), [MongoDB/MongooseDB](https://mongoosejs.com/docs/), [Auto Health Export](https://www.healthexportapp.com/), [Tres.js](https://tresjs.org/), and [Tailwind CSS](https://tailwindcss.com/)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 ## Setup
 
 Autodeploy to cloud run (not firebase)
