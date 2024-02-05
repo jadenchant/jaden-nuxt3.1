@@ -8,6 +8,7 @@
     "postinstall": "nuxi prepare"
   },
   "devDependencies": {
+    "@nuxtjs/device": "^3.1.1",
     "autoprefixer": "^10.4.14",
     "nuxt": "^3.7.0",
     "postcss": "^8.4.21",

@@ -6,6 +6,7 @@ import {
   MeshStandardMaterial,
   Color,
 } from 'three';
+import { GLTFModel } from '@tresjs/cientos';
 const { onLoop } = useRenderLoop();
 const gl = {
   clearColor: '#374151',
@@ -45,22 +46,32 @@ onLoop(({ delta, elapsed }) => {
 </script>
 
 <template>
-  <div class="h-96 min-w-min">
-    <TresCanvas v-bind="gl">
-      <TresPerspectiveCamera
-        :position="[0, 2.3, 6.2]"
-        :fov="75"
-        :near="0.1"
-        :far="1000"
-      />
-      <TresAmbientLight :color="0xffffff" :intensity="0.75" />
-      <TresDirectionalLight :position="[0, 8, 5]" :intensity="1" cast-shadow />
-      <TresMesh>
-        <Suspense>
-          <GLTFModel ref="modelRef" path="/models/face.glb" draco />
-        </Suspense>
-        <!-- <TresMeshBasicMaterial /> -->
-      </TresMesh>
-    </TresCanvas>
-  </div>
+  <ClientOnly>
+    <div class="h-96 min-w-min">
+      <TresCanvas v-bind="gl">
+        <TresPerspectiveCamera
+          :position="[0, 2.3, 6.2]"
+          :fov="75"
+          :near="0.1"
+          :far="1000"
+        />
+        <TresAmbientLight :color="0xffffff" :intensity="0.75" />
+        <TresDirectionalLight
+          :position="[0, 8, 5]"
+          :intensity="1"
+          cast-shadow
+        />
+        <TresMesh>
+          <!-- <Suspense>
+            <primitive :object="scene" />
+          </Suspense> -->
+
+          <Suspense>
+            <GLTFModel ref="modelRef" path="/models/face.glb" draco />
+          </Suspense>
+          <!-- <TresMeshBasicMaterial /> -->
+        </TresMesh>
+      </TresCanvas>
+    </div>
+  </ClientOnly>
 </template>
