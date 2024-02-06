@@ -5,7 +5,7 @@
         <NuxtLink
           v-if="$device.isMobile"
           to="/"
-          class="md:text-6xl text-3xl font-bold mr-8 relative -bottom-1"
+          class="text-5xl font-bold mr-8 relative -bottom-1"
           >JC</NuxtLink
         >
         <NuxtLink
@@ -15,9 +15,9 @@
           >Jaden Chant</NuxtLink
         >
         <!-- <NuxtLink to="/" class="md:hidden text-4xl font-bold mr-8">JC</NuxtLink> -->
-        <ul class="flex items-end md:text-3xl text-lg">
-          <li><NuxtLink to="/" class="mr-4">Home</NuxtLink></li>
-          <li><NuxtLink to="/about" class="mr-4">About</NuxtLink></li>
+        <ul class="flex items-end md:text-3xl text-2xl">
+          <li><NuxtLink to="/" class="mr-5 md:mr-4">Home</NuxtLink></li>
+          <li><NuxtLink to="/about" class="mr-5 md:mr-4">About</NuxtLink></li>
         </ul>
         <div class="grow"></div>
         <NuxtLink

@@ -4,7 +4,7 @@
     <h2 class="text-2xl md:text-4xl mb-4">About Me</h2>
 
     <div
-      class="flex flex-col lg:align-middle justify-between h-28 md:h-32 md:text-2xl lg:text-center"
+      class="flex flex-col lg:align-middle justify-between h-28 md:h-32 ml-2 md:ml-4 md:text-2xl lg:text-center"
     >
       <p>
         Current Student @

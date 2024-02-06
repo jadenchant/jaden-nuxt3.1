@@ -46,7 +46,8 @@
 .icon-sm .nuxt-icon.heart svg {
   width: 3em;
   height: 3em;
-  margin-right: 2em;
+  margin-right: 1em;
+  margin-top: 0.2em;
 }
 
 .icon-sm .nuxt-icon.pulse svg {
