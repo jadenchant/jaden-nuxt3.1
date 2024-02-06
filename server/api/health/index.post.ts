@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
 
     const stepsData = new Steps({
       date: steps.data[0].date,
-      steps: steps.data[0].qty,
+      steps: round(steps.data[0].qty),
       units: steps.units,
     });
 
