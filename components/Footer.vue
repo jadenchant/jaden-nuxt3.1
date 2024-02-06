@@ -1,17 +1,21 @@
 <template>
   <div class="absolute bottom-0 w-full">
-    <div class="flex justify-center align-middle mb-2">
+    <div
+      class="flex justify-center align-middle mb-2"
+      :class="$device.isMobile ? 'icon-sm' : 'icon-lg'"
+    >
       <NuxtLink
         to="https://www.linkedin.com/in/jaden-chant/"
         target="_blank"
         class="flex items-center mr-3 md:mr-5"
-        ><img src="/img/linkedin.svg" alt="LinkedIn Logo" class="h-10 md:h-16"
-      /></NuxtLink>
+      >
+        <nuxt-icon name="linkedin" class="icon" filled />
+      </NuxtLink>
       <NuxtLink
         to="https://github.com/jadenchant"
         target="_blank"
         class="flex items-center ml-3 md:ml-5"
-        ><img src="/img/github.svg" alt="Github Logo" class="h-10 md:h-16"
+        ><nuxt-icon name="github" class="icon" filled
       /></NuxtLink>
     </div>
     <div class="flex justify-center align-middle p-4">
@@ -28,3 +32,15 @@
 </template>
 
 <script setup></script>
+
+<style>
+.icon-lg .icon svg {
+  width: 4em;
+  height: 4em;
+}
+
+.icon-sm .icon svg {
+  width: 3.6em;
+  height: 3.6em;
+}
+</style>
