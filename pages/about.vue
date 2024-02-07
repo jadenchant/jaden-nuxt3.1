@@ -7,7 +7,7 @@
       class="flex flex-col lg:align-middle justify-between h-28 md:h-32 ml-2 md:ml-4 md:text-2xl lg:text-center"
     >
       <p>
-        Current Student @
+        Current CS and Math Student @
         <NuxtLink to="https://wp.stolaf.edu/" target="_blank" class="underline"
           >St. Olaf College</NuxtLink
         >
