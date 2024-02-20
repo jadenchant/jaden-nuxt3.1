@@ -1,5 +1,10 @@
 <template>
-  <div class="bg-gray-700 h-screen" @scroll.prevent>
+  <div
+    class="bg-gray-700 h-screen"
+    @scroll.prevent
+    @wheel.prevent
+    @touchmove.prevent
+  >
     <Header />
     <div class="px-6 py-2">
       <slot />
