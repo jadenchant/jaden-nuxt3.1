@@ -1,4 +1,4 @@
-ARG NODE_VERSION=node:18.15.0
+ARG NODE_VERSION=node:18.17.0
 
 FROM $NODE_VERSION AS dependency-base
 

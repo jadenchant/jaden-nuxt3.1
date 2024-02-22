@@ -1,8 +1,8 @@
 <template>
   <div class="absolute z-0" :class="$device.isMobile ? 'icon-sm' : 'icon-lg'">
-    <nuxt-icon name="heart" class="heart" />
-    <nuxt-icon name="pulse" class="pulse pulse1" />
-    <nuxt-icon name="pulse" class="pulse pulse2" />
+    <NuxtIcon name="heart" class="heart" />
+    <NuxtIcon name="pulse" class="pulse pulse1" />
+    <NuxtIcon name="pulse" class="pulse pulse2" />
   </div>
 </template>
 
