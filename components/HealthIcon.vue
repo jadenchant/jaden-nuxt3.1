@@ -14,7 +14,7 @@
 }
 
 .icon-lg .nuxt-icon.pulse svg {
-  width: 4.4em;
+  width: 4.8em;
   height: 1.7em;
 }
 

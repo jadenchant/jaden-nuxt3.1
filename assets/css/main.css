@@ -36,5 +36,6 @@
   html {
     font-family: 'TitilliumWeb', sans-serif;
     color: #f0f0f0;
+    scrollbar-width: none;
   }
 }
