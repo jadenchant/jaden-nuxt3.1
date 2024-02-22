@@ -19,16 +19,16 @@ export default defineNuxtConfig({
     },
   },
 
-  image: {},
+  image: { dir: 'public/images' },
 
-  buildModules: [
-    // Next Image module https://image.nuxtjs.org/components/nuxt-img
-    [
-      '@nuxt/image',
-      {
-        provider: 'static',
-        dir: 'public/',
-      },
-    ],
-  ],
+  // buildModules: [
+  //   // Next Image module https://image.nuxtjs.org/components/nuxt-img
+  //   [
+  //     '@nuxt/image',
+  //     {
+  //       provider: 'static',
+  //       dir: 'assets/img',
+  //     },
+  //   ],
+  // ],
 });
