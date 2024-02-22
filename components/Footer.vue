@@ -25,7 +25,7 @@
         target="_blank"
         class="flex items-center"
       >
-        <NuxtImg src="/img/nuxt.png" alt="Nuxt3 Logo" class="h-4 md:h-5" />
+        <NuxtImg src="/img/nuxt.png" alt="Nuxt3" class="h-4 md:h-5" />
       </NuxtLink>
     </div>
   </div>
