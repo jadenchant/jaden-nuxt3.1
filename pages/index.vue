@@ -1,10 +1,8 @@
 <template>
   <title>Jaden Chant</title>
-  <NuxtPicture
-    src="/jaden_nyc.png"
-    class="absolute z-0 right-0 bottom-0 md:top-16"
-    sizes="100vw sm:500px md:750px"
-    preload
+  <img
+    src="/images/jaden_nyc.png"
+    class="absolute z-0 right-0 bottom-0 md:top-16 sm:h-[500px] md:h-[750px]"
   />
   <div>
     <h2 class="text-2xl mb-4"></h2>

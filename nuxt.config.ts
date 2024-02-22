@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     plugins: ['~/server/index.ts'],
   },
 
-  modules: ['nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device', '@nuxt/image'],
+  modules: ['nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device'],
 
   css: ['@/assets/css/main.css'],
   postcss: {
@@ -18,17 +18,4 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-
-  // image: { dir: 'public/images' },
-
-  // buildModules: [
-  //   // Next Image module https://image.nuxtjs.org/components/nuxt-img
-  //   [
-  //     '@nuxt/image',
-  //     {
-  //       provider: 'static',
-  //       dir: 'assets/img',
-  //     },
-  //   ],
-  // ],
 });
