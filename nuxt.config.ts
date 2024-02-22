@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     },
   },
 
-  image: { dir: 'public/images' },
+  // image: { dir: 'public/images' },
 
   // buildModules: [
   //   // Next Image module https://image.nuxtjs.org/components/nuxt-img
