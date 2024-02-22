@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     plugins: ['~/server/index.ts'],
   },
 
-  modules: ['nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device', "@nuxt/image"],
+  modules: ['nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device', '@nuxt/image'],
 
   css: ['@/assets/css/main.css'],
   postcss: {
@@ -18,4 +18,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
+  image: {},
 });

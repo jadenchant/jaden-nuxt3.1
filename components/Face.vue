@@ -33,16 +33,6 @@ onLoop(({ delta, elapsed }) => {
     modelRef.value.value.rotation.y -= delta;
   }
 });
-
-// const handleModelLoad = () => {
-//   modelRef.value.scene.traverse((child) => {
-//     if (child.isMesh) {
-//       child.material = new MeshStandardMaterial({
-//         color: new Color(0xffffff),
-//       });
-//     }
-//   });
-// };
 </script>
 
 <template>
