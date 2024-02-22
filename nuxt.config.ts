@@ -19,5 +19,16 @@ export default defineNuxtConfig({
     },
   },
 
-  image: { provider: 'ipx' },
+  image: {},
+
+  buildModules: [
+    // Next Image module https://image.nuxtjs.org/components/nuxt-img
+    [
+      '@nuxt/image',
+      {
+        provider: 'static',
+        dir: 'public/',
+      },
+    ],
+  ],
 });
