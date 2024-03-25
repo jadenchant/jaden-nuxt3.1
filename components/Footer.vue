@@ -1,7 +1,7 @@
 <template>
   <div class="absolute bottom-0 w-full">
     <div
-      class="flex justify-center align-middle mb-2"
+      class="flex justify-center align-middle mb-4"
       :class="$device.isMobile ? 'icon-sm' : 'icon-lg'"
     >
       <NuxtLink
@@ -18,7 +18,7 @@
         ><nuxt-icon name="github" class="icon" filled
       /></NuxtLink>
     </div>
-    <div class="flex justify-center align-middle p-4">
+    <!-- <div class="flex justify-center align-middle p-4">
       <p class="mr-2 mt-1 text-md md:text-lg">Made with</p>
       <NuxtLink
         to="https://nuxt.com/"
@@ -27,7 +27,7 @@
       >
         <img src="/images/nuxt.png" alt="Nuxt3" class="h-4 md:h-5" />
       </NuxtLink>
-    </div>
+    </div> -->
   </div>
 </template>
 

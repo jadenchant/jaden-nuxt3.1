@@ -1,6 +1,9 @@
 <template><p id="d3-target"></p></template>
 
-<script setup>
+<script setup lang="ts">
+defineProps<{
+  data?: any;
+}>();
 import * as d3 from 'd3';
 
 // Declare the chart dimensions and margins.
