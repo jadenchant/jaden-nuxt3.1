@@ -2,7 +2,7 @@
   <title>Jaden Chant</title>
   <img
     src="/images/jaden_nyc.png"
-    class="absolute z-0 right-0 bottom-0 md:top-16 sm:h-[500px] md:h-[750px]"
+    class="absolute z-0 right-0 bottom-0 sm:h-[500px] md:h-[750px]"
   />
   <div class="relative z-30">
     <h2 class="text-2xl md:text-4xl mb-6">Hi, I'm Jaden!</h2>
