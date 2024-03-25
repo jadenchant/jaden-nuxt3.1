@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     plugins: ['~/server/index.ts'],
   },
 
-  modules: ['nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device'],
+  modules: ['@nuxt/image', 'nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device'],
 
   css: ['@/assets/css/main.css'],
   postcss: {
