@@ -1,15 +1,15 @@
-import { Distances } from '../../models';
+import { Steps } from '../../models';
 
 export default defineEventHandler(async (event) => {
   console.log('Get Distance');
 
   try {
-    const data = await Distances.getPrev30();
+    const data = await Steps.getPrev30();
     if (data) {
-      return data.map((dist) => ({
-        date: dist.date,
-        distance: dist.distance,
-        units: dist.units,
+      return data.map((stp) => ({
+        date: stp.date,
+        distance: stp.steps,
+        units: stp.units,
       }));
     } else {
       throw new Error('Data is null');

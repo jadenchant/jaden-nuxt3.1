@@ -28,7 +28,6 @@ const distanceSchema = new mongoose.Schema(
           },
         });
       },
-
       getPrev30() {
         const last = new Date();
         last.setDate(last.getDate() - 30);
@@ -51,6 +50,13 @@ const distanceSchema = new mongoose.Schema(
                 day: { $dayOfMonth: '$date' },
               },
               data: { $first: '$$ROOT' },
+            },
+          },
+          {
+            $sort: {
+              '_id.year': 1,
+              '_id.month': 1,
+              '_id.day': 1,
             },
           },
           {

@@ -1,27 +1,20 @@
 <template><p id="d3-target"></p></template>
 
 <script setup lang="ts">
-// defineProps<{
-//   data?: any;
-// }>();
+const props = defineProps<{
+  data: any;
+}>();
 import * as d3 from 'd3';
 
-let data = [
-  { date: new Date(2022, 0, 1), close: 220 },
-  { date: new Date(2022, 0, 2), close: 230 },
-  { date: new Date(2022, 0, 3), close: 210 },
-  { date: new Date(2022, 0, 4), close: 240 },
-  { date: new Date(2022, 0, 5), close: 250 },
-  { date: new Date(2022, 0, 6), close: 220 },
-  { date: new Date(2022, 0, 7), close: 230 },
-  { date: new Date(2022, 0, 8), close: 210 },
-  { date: new Date(2022, 0, 9), close: 240 },
-  { date: new Date(2022, 0, 10), close: 250 },
-];
+let data = props.data;
+
+data.forEach((d) => {
+  d.date = new Date(d.date);
+});
 
 onMounted(() => {
   // Set the dimensions and margins of the graph
-  const margin = { top: 20, right: 30, bottom: 30, left: 30 },
+  const margin = { top: 20, right: 30, bottom: 30, left: 50 },
     width = 600 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
@@ -47,9 +40,19 @@ onMounted(() => {
   // Add Y axis
   const y = d3
     .scaleLinear()
-    .domain([0, d3.max(data, (d) => d.close)])
+    .domain([0, d3.max(data, (d) => d.distance)])
     .range([height, 0]);
-  svg.append('g').call(d3.axisLeft(y));
+  const yAxis = svg.append('g').call(d3.axisLeft(y));
+
+  // Add a label to the Y axis
+  yAxis
+    .append('text')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', -50) // Adjust this value to move the label away from the y-axis
+    .attr('dy', '0.71em') // Adjust this value to vertically center the text
+    .attr('text-anchor', 'end') // Align the text to the end, which will align it to the y-axis
+    .attr('fill', '#ffffff') // Change the color of the text to make it more visible
+    .text('Distance');
 
   // Add the line
   svg
@@ -66,7 +69,7 @@ onMounted(() => {
           return x(d.date);
         })
         .y(function (d) {
-          return y(d.close);
+          return y(d.distance);
         })
     );
 });

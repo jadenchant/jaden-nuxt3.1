@@ -4,16 +4,19 @@
     <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">
       Health Data {{ formatDate() }}
     </h2>
-    <div v-if="!pending && !error">
+    <div v-if="!prevPending && !prevError">
       <div class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
-        <p class="mb-4">Distance: {{ data?.distance.distance }} mi</p>
-        <p class="mb-4">Flights: {{ data?.flights.flights }} flights</p>
-        <p class="mb-4">Steps: {{ data?.steps.steps }} steps</p>
+        <p class="mb-4">Distance: {{ prevData?.distance.distance }} mi</p>
+        <p class="mb-4">Flights: {{ prevData?.flights.flights }} flights</p>
+        <p class="mb-4">Steps: {{ prevData?.steps.steps }} steps</p>
       </div>
-      <!-- <HealthGraph /> -->
     </div>
-    <p v-if="pending">Loading</p>
-    <p v-if="error">Error: {{ error.message }}</p>
+    <p v-if="prevPending">Loading</p>
+    <p v-if="prevError">Error: {{ prevError.message }}</p>
+
+    <!-- <div v-if="!distPending && !distError">
+      <HealthGraph :data="distData" />
+    </div> -->
   </div>
 </template>
 
@@ -22,7 +25,17 @@ definePageMeta({
   title: 'Health Data',
 });
 
-const { data, pending, error } = await useFetch('/api/health');
+const {
+  data: prevData,
+  pending: prevPending,
+  error: prevError,
+} = await useFetch('/api/health');
+
+const {
+  data: distData,
+  pending: distPending,
+  error: distError,
+} = await useFetch('/api/distances/30days');
 
 function formatDate() {
   const date = new Date();

@@ -28,6 +28,42 @@ const stepsSchema = new mongoose.Schema(
           },
         });
       },
+      getPrev30() {
+        const last = new Date();
+        last.setDate(last.getDate() - 30);
+        const now = new Date();
+
+        return this.aggregate([
+          {
+            $match: {
+              date: {
+                $gt: last,
+                $lt: now,
+              },
+            },
+          },
+          {
+            $group: {
+              _id: {
+                year: { $year: '$date' },
+                month: { $month: '$date' },
+                day: { $dayOfMonth: '$date' },
+              },
+              data: { $first: '$$ROOT' },
+            },
+          },
+          {
+            $sort: {
+              '_id.year': 1,
+              '_id.month': 1,
+              '_id.day': 1,
+            },
+          },
+          {
+            $replaceRoot: { newRoot: '$data' },
+          },
+        ]);
+      },
     },
   }
 );
