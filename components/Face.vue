@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import {
-  BasicShadowMap,
-  NoToneMapping,
-  SRGBColorSpace,
-  MeshStandardMaterial,
-  Color,
-} from 'three';
+import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from 'three';
 import { GLTFModel } from '@tresjs/cientos';
 const { onLoop } = useRenderLoop();
 const gl = {
   clearColor: '#374151',
-  // clearColor: '#ffffff',
   shadows: true,
   alpha: false,
   shadowMapType: BasicShadowMap,
@@ -37,7 +30,7 @@ onLoop(({ delta, elapsed }) => {
 
 <template>
   <ClientOnly>
-    <div class="h-96 min-w-min">
+    <div class="h-96 w-[350px]">
       <TresCanvas v-bind="gl">
         <TresPerspectiveCamera
           :position="[0, 2.3, 6.2]"

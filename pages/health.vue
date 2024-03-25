@@ -1,12 +1,14 @@
 <template>
   <title>Health Data</title>
   <div>
-    <h2 class="text-2xl md:text-4xl mb-4">Health Data {{ formatDate() }}</h2>
+    <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">
+      Health Data {{ formatDate() }}
+    </h2>
     <div v-if="!pending && !error">
-      <div class="text-xl md:text-2xl">
-        <p class="mb-4 ml-4">Distance: {{ data.distance[0].distance }} mi</p>
-        <p class="mb-4 ml-4">Flights: {{ data.flights[0].flights }} flights</p>
-        <p class="mb-4 ml-4">Steps: {{ data.steps[0].steps }} steps</p>
+      <div class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
+        <p class="mb-4">Distance: {{ data.distance[0].distance }} mi</p>
+        <p class="mb-4">Flights: {{ data.flights[0].flights }} flights</p>
+        <p class="mb-4">Steps: {{ data.steps[0].steps }} steps</p>
       </div>
       <HealthGraph />
     </div>

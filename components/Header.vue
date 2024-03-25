@@ -1,5 +1,5 @@
 <template>
-  <header class="relative w-full pl-6 py-4 z-50">
+  <header class="relative w-full pl-6 pt-6 pb-8 z-50">
     <nav class="w-full flex">
       <NuxtLink
         v-if="$device.isMobile"
@@ -13,10 +13,15 @@
         class="md:text-6xl text-3xl font-bold mr-8 relative -bottom-1"
         >Jaden Chant</NuxtLink
       >
-      <!-- <NuxtLink to="/" class="md:hidden text-4xl font-bold mr-8">JC</NuxtLink> -->
       <ul class="flex items-end md:text-3xl text-2xl">
-        <li><NuxtLink to="/" class="mr-5 md:mr-4">Home</NuxtLink></li>
-        <li><NuxtLink to="/about" class="mr-5 md:mr-4">About</NuxtLink></li>
+        <li>
+          <NuxtLink to="/" class="mr-5 md:mr-4 hover:underline">Home</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/about" class="mr-5 md:mr-4 hover:underline"
+            >About</NuxtLink
+          >
+        </li>
       </ul>
       <div class="grow"></div>
       <NuxtLink

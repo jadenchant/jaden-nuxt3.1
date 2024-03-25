@@ -1,8 +1,7 @@
 <template>
   <title>About</title>
   <div>
-    <h2 class="text-2xl md:text-4xl mb-4">About Me</h2>
-
+    <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">About Me</h2>
     <div
       class="flex flex-col lg:align-middle justify-between h-28 md:h-32 ml-2 md:ml-4 md:text-2xl lg:text-center"
     >
@@ -32,7 +31,7 @@
       </p>
     </div>
     <br />
-    <Face />
+    <div class="flex justify-center w-full"><Face /></div>
   </div>
 </template>
 
