@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const flightsSchema = new mongoose.Schema(
   {
@@ -17,11 +17,11 @@ const flightsSchema = new mongoose.Schema(
   },
   {
     statics: {
-      getFlightsPrev() {
+      getPrev() {
         const last = new Date();
         last.setDate(last.getDate() - 2);
         const now = new Date();
-        return this.find({
+        return this.findOne({
           date: {
             $gt: last,
             $lt: now,
@@ -32,4 +32,4 @@ const flightsSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Flights", flightsSchema, "flights");
+export default mongoose.model('Flights', flightsSchema, 'flights');

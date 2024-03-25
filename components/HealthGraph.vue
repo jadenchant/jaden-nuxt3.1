@@ -1,99 +1,73 @@
 <template><p id="d3-target"></p></template>
 
 <script setup lang="ts">
-defineProps<{
-  data?: any;
-}>();
+// defineProps<{
+//   data?: any;
+// }>();
 import * as d3 from 'd3';
 
-// Declare the chart dimensions and margins.
-const width = 928;
-const height = 500;
-const marginTop = 20;
-const marginRight = 30;
-const marginBottom = 30;
-const marginLeft = 40;
-
-// Declare the x (horizontal position) scale.
-// const x = d3.scaleUtc(
-//   d3.extent(aapl, (d) => d.date),
-//   [marginLeft, width - marginRight]
-// );
-
-// Declare the y (vertical position) scale.
-// const y = d3.scaleLinear(
-//   [0, d3.max(aapl, (d) => d.close)],
-//   [height - marginBottom, marginTop]
-// );
-
-// Declare the line generator.
-// const line = d3
-//   .line()
-//   .defined((d) => !isNaN(d.close))
-//   .x((d) => x(d.date))
-//   .y((d) => y(d.close));
-
-// Create the SVG container.
-// const svg = d3
-//   .create('svg')
-//   .attr('width', width)
-//   .attr('height', height)
-//   .attr('viewBox', [0, 0, width, height])
-//   .attr('style', 'max-width: 100%; height: auto; height: intrinsic;');
-
-// Add the x-axis.
-// svg
-//   .append('g')
-//   .attr('transform', `translate(0,${height - marginBottom})`)
-//   .call(
-//     d3
-//       .axisBottom(x)
-//       .ticks(width / 80)
-//       .tickSizeOuter(0)
-//   );
-
-// Add the y-axis, remove the domain line, add grid lines and a label.
-// svg
-//   .append('g')
-//   .attr('transform', `translate(${marginLeft},0)`)
-//   .call(d3.axisLeft(y).ticks(height / 40))
-//   .call((g) => g.select('.domain').remove())
-//   .call((g) =>
-//     g
-//       .selectAll('.tick line')
-//       .clone()
-//       .attr('x2', width - marginLeft - marginRight)
-//       .attr('stroke-opacity', 0.1)
-//   )
-//   .call((g) =>
-//     g
-//       .append('text')
-//       .attr('x', -marginLeft)
-//       .attr('y', 10)
-//       .attr('fill', 'currentColor')
-//       .attr('text-anchor', 'start')
-//       .text('↑ Daily close ($)')
-//   );
-
-// Append a path for the line.
-// svg
-//   .append('path')
-//   .attr('fill', 'none')
-//   .attr('stroke', '#ccc')
-//   .attr('stroke-width', 1.5)
-//   .attr('d', line(aaplMissing.filter((d) => !isNaN(d.close))));
-
-// Append a path for the line.
-// svg
-//   .append('path')
-//   .attr('fill', 'none')
-//   .attr('stroke', 'steelblue')
-//   .attr('stroke-width', 1.5)
-//   .attr('d', line(aaplMissing));
-
-// return svg.node();
+let data = [
+  { date: new Date(2022, 0, 1), close: 220 },
+  { date: new Date(2022, 0, 2), close: 230 },
+  { date: new Date(2022, 0, 3), close: 210 },
+  { date: new Date(2022, 0, 4), close: 240 },
+  { date: new Date(2022, 0, 5), close: 250 },
+  { date: new Date(2022, 0, 6), close: 220 },
+  { date: new Date(2022, 0, 7), close: 230 },
+  { date: new Date(2022, 0, 8), close: 210 },
+  { date: new Date(2022, 0, 9), close: 240 },
+  { date: new Date(2022, 0, 10), close: 250 },
+];
 
 onMounted(() => {
-  d3.select('#d3-target').text('');
+  // Set the dimensions and margins of the graph
+  const margin = { top: 20, right: 30, bottom: 30, left: 30 },
+    width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+  // Append the svg object to the body of the page
+  const svg = d3
+    .select('#d3-target')
+    .append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+  // Add X axis
+  const x = d3
+    .scaleUtc()
+    .domain(d3.extent(data, (d) => d.date))
+    .range([0, width]);
+  svg
+    .append('g')
+    .attr('transform', 'translate(0,' + height + ')')
+    .call(d3.axisBottom(x));
+
+  // Add Y axis
+  const y = d3
+    .scaleLinear()
+    .domain([0, d3.max(data, (d) => d.close)])
+    .range([height, 0]);
+  svg.append('g').call(d3.axisLeft(y));
+
+  // Add the line
+  svg
+    .append('path')
+    .datum(data)
+    .attr('fill', 'none')
+    .attr('stroke', 'steelblue')
+    .attr('stroke-width', 1.5)
+    .attr(
+      'd',
+      d3
+        .line()
+        .x(function (d) {
+          return x(d.date);
+        })
+        .y(function (d) {
+          return y(d.close);
+        })
+    );
 });
 </script>

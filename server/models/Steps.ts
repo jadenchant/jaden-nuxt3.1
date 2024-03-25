@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const stepsSchema = new mongoose.Schema(
   {
@@ -17,11 +17,11 @@ const stepsSchema = new mongoose.Schema(
   },
   {
     statics: {
-      getStepsPrev() {
+      getPrev() {
         const last = new Date();
         last.setDate(last.getDate() - 2);
         const now = new Date();
-        return this.find({
+        return this.findOne({
           date: {
             $gt: last,
             $lt: now,
@@ -32,4 +32,4 @@ const stepsSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Steps", stepsSchema, "steps");
+export default mongoose.model('Steps', stepsSchema, 'steps');

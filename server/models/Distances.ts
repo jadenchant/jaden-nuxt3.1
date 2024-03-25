@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const distanceSchema = new mongoose.Schema(
   {
@@ -17,19 +17,49 @@ const distanceSchema = new mongoose.Schema(
   },
   {
     statics: {
-      getDistancePrev() {
+      getPrev() {
         const last = new Date();
         last.setDate(last.getDate() - 2);
         const now = new Date();
-        return this.find({
+        return this.findOne({
           date: {
             $gt: last,
             $lt: now,
           },
         });
       },
+
+      getPrev30() {
+        const last = new Date();
+        last.setDate(last.getDate() - 30);
+        const now = new Date();
+
+        return this.aggregate([
+          {
+            $match: {
+              date: {
+                $gt: last,
+                $lt: now,
+              },
+            },
+          },
+          {
+            $group: {
+              _id: {
+                year: { $year: '$date' },
+                month: { $month: '$date' },
+                day: { $dayOfMonth: '$date' },
+              },
+              data: { $first: '$$ROOT' },
+            },
+          },
+          {
+            $replaceRoot: { newRoot: '$data' },
+          },
+        ]);
+      },
     },
   }
 );
 
-export default mongoose.model("Distances", distanceSchema, "distances");
+export default mongoose.model('Distances', distanceSchema, 'distances');

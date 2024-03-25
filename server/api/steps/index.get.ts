@@ -4,11 +4,15 @@ export default defineEventHandler(async (event) => {
   console.log('Get Steps');
 
   try {
-    const data = await Steps.getStepsPrev();
-    return data.map((step) => ({
-      steps: step.steps,
-      units: step.units,
-    }));
+    const data = await Steps.getPrev();
+    if (data) {
+      return {
+        steps: data.steps,
+        units: data.units,
+      };
+    } else {
+      throw new Error('Data is null');
+    }
   } catch (error) {
     console.dir(error);
     event.node.res.statusCode = 500;

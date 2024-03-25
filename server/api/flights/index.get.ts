@@ -4,11 +4,15 @@ export default defineEventHandler(async (event) => {
   console.log('Get Flights');
 
   try {
-    const data = await Flights.getFlightsPrev();
-    return data.map((flight) => ({
-      flights: flight.flights,
-      units: flight.units,
-    }));
+    const data = await Flights.getPrev();
+    if (data) {
+      return {
+        flights: data.flights,
+        units: data.units,
+      };
+    } else {
+      throw new Error('Data is null');
+    }
   } catch (error) {
     console.dir(error);
     event.node.res.statusCode = 500;
