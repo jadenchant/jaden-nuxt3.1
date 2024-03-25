@@ -18,8 +18,8 @@
     "@tresjs/cientos": "^3.8.0",
     "@tresjs/nuxt": "^2.1.1",
     "d3": "^7.9.0",
-    "dotenv": "^16.0.3",
-    "mongoose": "^6.8.4",
+    "dotenv": "^16.4.5",
+    "mongoose": "^6.12.7",
     "nuxt-icons": "^3.2.1",
     "three": "^0.159.0"
   }
