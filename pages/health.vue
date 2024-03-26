@@ -1,22 +1,23 @@
 <template>
   <title>Health Data</title>
-  <div>
-    <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">
-      Health Data {{ formatDate() }}
-    </h2>
-    <div v-if="!prevPending && !prevError">
-      <div class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
-        <p class="mb-4">Distance: {{ prevData?.distance.distance }} mi</p>
-        <p class="mb-4">Flights: {{ prevData?.flights.flights }} flights</p>
-        <p class="mb-4">Steps: {{ prevData?.steps.steps }} steps</p>
+  <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">
+    Health Data {{ formatDate() }}
+  </h2>
+  <div class="lg:flex">
+    <div>
+      <div v-if="!prevPending && !prevError">
+        <div class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
+          <p class="mb-4">Distance: {{ prevData?.distance.distance }} mi</p>
+          <p class="mb-4">Flights: {{ prevData?.flights.flights }} flights</p>
+          <p class="mb-4">Steps: {{ prevData?.steps.steps }} steps</p>
+        </div>
       </div>
+      <p v-if="prevPending">Loading</p>
+      <p v-if="prevError">Error: {{ prevError.message }}</p>
     </div>
-    <p v-if="prevPending">Loading</p>
-    <p v-if="prevError">Error: {{ prevError.message }}</p>
-
-    <!-- <div v-if="!distPending && !distError">
+    <div v-if="!distPending && !distError" class="ml-4 lg:ml-20">
       <HealthGraph :data="distData" />
-    </div> -->
+    </div>
   </div>
 </template>
 

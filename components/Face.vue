@@ -3,9 +3,8 @@ import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from 'three';
 import { GLTFModel } from '@tresjs/cientos';
 const { onLoop } = useRenderLoop();
 const gl = {
-  clearColor: '#374151',
   shadows: true,
-  alpha: false,
+  alpha: true,
   shadowMapType: BasicShadowMap,
   outputColorSpace: SRGBColorSpace,
   toneMapping: NoToneMapping,
@@ -13,17 +12,13 @@ const gl = {
 
 const modelRef = shallowRef<THREE.Object3D>();
 
-// watch(modelRef, (model) => {
-//   model.value.position = new THREE.Vector3(1, 0, 1);
-// });
-
-watchEffect(() => {
-  console.log(modelRef.value);
-});
-
 onLoop(({ delta, elapsed }) => {
   if (modelRef.value) {
-    modelRef.value.value.rotation.y -= delta;
+    let baseline = delta * 0.7;
+    if (elapsed < 5) {
+      baseline = baseline * (4 / elapsed);
+    }
+    modelRef.value.value.rotation.y -= baseline;
   }
 });
 </script>
