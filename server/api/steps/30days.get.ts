@@ -1,14 +1,14 @@
 import { Steps } from '../../models';
 
 export default defineEventHandler(async (event) => {
-  console.log('Get Distance');
+  console.log('Get 30Steps');
 
   try {
     const data = await Steps.getPrev30();
     if (data) {
       return data.map((stp) => ({
         date: stp.date,
-        distance: stp.steps,
+        steps: stp.steps,
         units: stp.units,
       }));
     } else {

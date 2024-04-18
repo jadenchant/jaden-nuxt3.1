@@ -15,8 +15,8 @@ const modelRef = shallowRef<THREE.Object3D>();
 onLoop(({ delta, elapsed }) => {
   if (modelRef.value) {
     let baseline = delta * 0.7;
-    if (elapsed < 5) {
-      baseline = baseline * (4 / elapsed);
+    if (elapsed < 2.5) {
+      baseline *= 2.5 / elapsed;
     }
     modelRef.value.value.rotation.y -= baseline;
   }

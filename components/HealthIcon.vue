@@ -6,16 +6,24 @@
   </div>
 </template>
 
+<script setup></script>
+
 <style>
 .icon-lg .nuxt-icon.heart svg {
   width: 4.6em;
   height: 4.6em;
   margin-right: 2.2em;
+  transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
+}
+
+.icon-lg:hover .nuxt-icon.heart svg {
+  width: 4.9em;
+  height: 4.9em;
 }
 
 .icon-lg .nuxt-icon.pulse svg {
   width: 4.8em;
-  height: 1.7em;
+  height: 1.8em;
 }
 
 .icon-lg .pulse {
@@ -35,11 +43,11 @@
 
 @keyframes pulse-lg {
   from {
-    left: -3.4em;
+    left: -4em;
   }
 
   to {
-    left: 3em;
+    left: 4em;
   }
 }
 

@@ -1,14 +1,14 @@
 import { Flights } from '../../models';
 
 export default defineEventHandler(async (event) => {
-  console.log('Get Distance');
+  console.log('Get 30Flights');
 
   try {
     const data = await Flights.getPrev30();
     if (data) {
       return data.map((flt) => ({
         date: flt.date,
-        distance: flt.flights,
+        flights: flt.flights,
         units: flt.units,
       }));
     } else {

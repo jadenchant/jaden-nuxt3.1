@@ -1,7 +1,7 @@
 import { Distances } from '../../models';
 
 export default defineEventHandler(async (event) => {
-  console.log('Get Distance');
+  console.log('Get 30Distance');
 
   try {
     const data = await Distances.getPrev30();

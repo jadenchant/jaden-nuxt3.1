@@ -8,13 +8,15 @@
 <script setup lang="ts">
 const props = defineProps<{
   data: any;
+  dataType: string;
 }>();
 import * as d3 from 'd3';
 const { isMobile } = useDevice();
 
 let data = props.data;
+// const dataType = props.dataType;
 
-data.forEach((d) => {
+data.forEach((d: any) => {
   d.date = new Date(d.date);
 });
 
@@ -31,6 +33,17 @@ onMounted(() => {
     height = 400 - margin.top - margin.bottom;
     yaxis = { x: -125, y: -50 };
   }
+
+  // const data = (switch (dataType) {
+  //           case 'distance':
+  //             return y(d.distance);
+  //           case 'flights':
+  //             return y(d.flights);
+  //           case 'steps':
+  //             return y(d.steps);
+  //           default:
+  //             return y(d.distance);
+  //         })
 
   const svg = d3
     .select('div')
@@ -82,6 +95,19 @@ onMounted(() => {
         .y(function (d) {
           return y(d.distance);
         })
+      // .y((d) => {
+      //   // Use the dataType prop to determine which property to use
+      //   switch (this.dataType) {
+      //     case 'distance':
+      //       return y(d.distance);
+      //     case 'flights':
+      //       return y(d.flights);
+      //     case 'steps':
+      //       return y(d.steps);
+      //     default:
+      //       return y(d.distance);
+      //   }
+      // })
     );
 
   const totalLength = line.node().getTotalLength();
