@@ -16,9 +16,6 @@
         I am a Senior Student @ St. Olaf College in Northfield, MN.
       </p>
       <p class="mb-4">
-        I am looking for a career in Front-End Web Development.
-      </p>
-      <p class="mb-4">
         If you would like to contact me, feel free to message me on
         <NuxtLink
           to="https://www.linkedin.com/in/jaden-chant/"
@@ -26,6 +23,10 @@
           class="underline"
           >LinkedIn</NuxtLink
         >!
+      </p>
+      <p>
+        If you're curious about yesterday's
+        <NuxtLink to="/health" class="underline">health data...</NuxtLink>
       </p>
     </div>
   </div>

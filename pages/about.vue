@@ -3,16 +3,25 @@
   <div class="z-10">
     <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">About Me</h2>
     <div
-      class="flex flex-col lg:align-middle justify-between h-28 md:h-32 ml-2 md:ml-4 md:text-2xl lg:text-center"
+      class="flex flex-col lg:align-middle justify-between h-36 md:h-36 ml-2 md:ml-4 md:text-2xl lg:text-center"
     >
       <p class="z-10">
-        Current CS and Math Student @
+        CS and Math Graduate from
         <NuxtLink to="https://wp.stolaf.edu/" target="_blank" class="underline"
           >St. Olaf College</NuxtLink
         >
       </p>
       <p class="z-10">
-        2023 | Software Engineering Intern @
+        Statistics and Data Science
+        <NuxtLink
+          to="https://jadenchant.github.io"
+          target="_blank"
+          class="underline"
+          >Projects</NuxtLink
+        >
+      </p>
+      <p class="z-10">
+        Software Engineering Intern @
         <NuxtLink
           to="https://www.target.com/finds"
           target="_blank"
@@ -21,7 +30,7 @@
         >
       </p>
       <p class="z-10">
-        2022 | Software Development Intern @
+        Software Development Intern @
         <NuxtLink
           to="https://www.usbank.com/index.html"
           target="_blank"
