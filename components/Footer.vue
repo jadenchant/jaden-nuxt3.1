@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute bottom-0 w-full">
+  <div class="z-20 w-full mt-4">
     <div
       class="flex justify-center align-middle mb-4"
       :class="$device.isMobile ? 'icon-sm' : 'icon-lg'"

@@ -37,7 +37,7 @@
       <p v-if="prevError">Error: {{ prevError.message }}</p>
     </div>
     <div class="ml-4 lg:ml-20">
-      <HealthGraph :data="graphData" :dataType="distance" />
+      <HealthGraph :data="graphData" dataType="distance" />
     </div>
   </div>
 </template>

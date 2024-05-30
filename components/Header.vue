@@ -4,22 +4,35 @@
       <NuxtLink
         v-if="$device.isMobile"
         to="/"
-        class="text-5xl font-bold mr-8 relative -bottom-1"
+        class="text-5xl font-bold mr-4 relative -bottom-1"
         >JC</NuxtLink
       >
       <NuxtLink
         v-else
         to="/"
-        class="md:text-6xl text-3xl font-bold mr-8 relative -bottom-1"
+        class="text-3xl md:text-6xl font-bold mr-12 relative -bottom-1"
         >Jaden Chant</NuxtLink
       >
-      <ul class="flex items-end md:text-3xl text-2xl">
+      <ul class="flex items-end text-2xl md:text-3xl lg:text-4xl">
         <li>
-          <NuxtLink to="/" class="mr-5 md:mr-4 hover:underline">Home</NuxtLink>
+          <NuxtLink
+            to="/"
+            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-1 hover:underline"
+            >Home</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink to="/about" class="mr-5 md:mr-4 hover:underline"
+          <NuxtLink
+            to="/about"
+            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-1 hover:underline"
             >About</NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink
+            to="/projects"
+            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-1 hover:underline"
+            >Projects</NuxtLink
           >
         </li>
       </ul>

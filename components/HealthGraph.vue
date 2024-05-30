@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="text-xl">Distance Walked Over Last 30 Days</h3>
-    <p id="d3-target" class="mt-4"></p>
+    <p id="d3-target" class="mt-4 z-10"></p>
   </div>
 </template>
 
