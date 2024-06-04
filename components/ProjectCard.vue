@@ -9,7 +9,7 @@
         v-if="img"
         :src="img"
         class=""
-        sizes="sm:150px md:225px lg:300px"
+        sizes="sm:250px lg:300px"
         preload
       />
     </div>

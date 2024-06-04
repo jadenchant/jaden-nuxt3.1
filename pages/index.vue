@@ -13,7 +13,8 @@
       class="flex flex-col text-lg ml-2 md:ml-4 lg:ml-8 lg:h-56 lg:justify-between lg:text-2xl"
     >
       <p class="mb-4">
-        I am a Senior Student @ St. Olaf College in Northfield, MN.
+        I am a recent CS and Math graduate from St. Olaf College in Northfield,
+        MN.
       </p>
       <p class="mb-4">
         If you would like to contact me, feel free to message me on
