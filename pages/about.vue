@@ -12,15 +12,6 @@
         >
       </p>
       <p class="z-10">
-        Statistics and Data Science
-        <NuxtLink
-          to="https://jadenchant.github.io"
-          target="_blank"
-          class="underline"
-          >Projects</NuxtLink
-        >
-      </p>
-      <p class="z-10">
         Software Engineering Intern @
         <NuxtLink
           to="https://www.target.com/finds"
