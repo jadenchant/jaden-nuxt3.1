@@ -47,22 +47,16 @@ definePageMeta({
   title: 'Health Data',
 });
 
-const {
-  data: prevData,
-  pending: prevPending,
-  error: prevError,
-} = await useFetch('/api/health');
+const { data: prevData, error: prevError } = await useFetch('/api/health');
 
-const {
-  data: distData,
-  pending: distPending,
-  error: distError,
-} = await useFetch('/api/distances/30days');
+const { data: distData, error: distError } = await useFetch(
+  '/api/distances/30days'
+);
 
 const graphData = useState('graphData', () => distData);
 
 const fetchGraphData = async (apiUrl: string) => {
-  const { data, pending, error } = await useFetch(apiUrl);
+  const { data, error } = await useFetch(apiUrl);
   if (error.value) {
     console.error('Failed to fetch data:', error.value);
     return;
