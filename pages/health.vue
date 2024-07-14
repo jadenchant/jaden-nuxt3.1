@@ -5,7 +5,7 @@
   </h2>
   <div class="lg:flex z-50">
     <div>
-      <div v-if="!prevPending && !prevError">
+      <div v-if="!prevError">
         <div class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
           <div
             class="cursor-pointer show-graph"
@@ -33,11 +33,14 @@
           </div>
         </div>
       </div>
-      <p v-if="prevPending">Loading</p>
       <p v-if="prevError">Error: {{ prevError.message }}</p>
     </div>
     <div class="ml-4 lg:ml-20">
-      <HealthGraph :data="graphData" dataType="distance" />
+      <!-- <HealthGraph
+        v-if="graphData"
+        :data="graphData"
+        :dataType="graphDataType"
+      /> -->
     </div>
   </div>
 </template>
@@ -47,23 +50,40 @@ definePageMeta({
   title: 'Health Data',
 });
 
+let graphData = ref([]);
+let graphDataType = ref('');
+
+// const graphData = useState('graphData', () => 'Hey');
+// const graphDataType = useState('graphDataType', () => 'distance');
+
 const { data: prevData, error: prevError } = await useFetch('/api/health');
 
-const { data: distData, error: distError } = await useFetch(
-  '/api/distances/30days'
-);
-
-const graphData = useState('graphData', () => distData);
+onMounted(async () => {
+  const distData = await $fetch('/api/distances/30days');
+  if (distData) {
+    graphData.value = distData;
+    graphDataType.value = 'distance';
+  }
+});
 
 const fetchGraphData = async (apiUrl: string) => {
-  const { data, error } = await useFetch(apiUrl);
-  if (error.value) {
-    console.error('Failed to fetch data:', error.value);
-    return;
+  try {
+    const data = await $fetch(apiUrl);
+    graphData.value = data;
+    // console.log('data:', data);
+    // console.log('graphData:', graphData.value[0]);
+
+    // Determine the graphDataType based on the apiUrl
+    if (apiUrl.includes('distances')) {
+      graphDataType.value = 'distance';
+    } else if (apiUrl.includes('flights')) {
+      graphDataType.value = 'flights';
+    } else if (apiUrl.includes('steps')) {
+      graphDataType.value = 'steps';
+    }
+  } catch (error) {
+    console.error('Failed to fetch data:', error);
   }
-  console.log(data.value);
-  graphData.value = data.value;
-  console.log(graphData.value);
 };
 
 const formatDate = () => {

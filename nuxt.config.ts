@@ -10,15 +10,18 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/image', 'nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device'],
-
   css: ['@/assets/css/main.css'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   device: {
     refreshOnResize: true,
   },
+
+  compatibilityDate: '2024-07-13',
 });

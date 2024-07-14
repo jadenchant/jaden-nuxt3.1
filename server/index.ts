@@ -8,8 +8,8 @@ export default async () => {
   try {
     const mongoUrl = process.env.MONGO_URL || '';
     mongoose.connect(mongoUrl);
-    console.log('DB connection established.');
+    console.log('JADEN-NUXT connection established.');
   } catch (err) {
-    console.error('DB connection failed.', err);
+    console.error('JADEN-NUXT connection failed.', err);
   }
 };

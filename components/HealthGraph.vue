@@ -1,26 +1,60 @@
 <template>
   <div>
-    <h3 class="text-xl">Distance Walked Over Last 30 Days</h3>
-    <p id="d3-target" class="mt-4 z-10"></p>
+    <h3 class="text-xl">
+      {{ dataType.charAt(0).toUpperCase() + dataType.slice(1) }}
+      Walked Over Last 30 Days
+    </h3>
+    <div v-if="props.data">
+      <p id="d3-target" class="mt-4 z-10"></p>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  data: any;
+  data: [];
   dataType: string;
 }>();
 import * as d3 from 'd3';
 const { isMobile } = useDevice();
 
-let data = props.data;
-// const dataType = props.dataType;
-
-data.forEach((d: any) => {
-  d.date = new Date(d.date);
-});
+// let data = ref(props.data || []);
+// let graphData = ref(props.data);
+// let dataType = ref(props.dataType);
+const graphData = useState('graphData', () => props.data);
+const dataType = useState('dataType', () => props.dataType);
 
 onMounted(() => {
+  // graphData.value = props.data;
+  drawGraph();
+});
+
+onUpdated(() => {
+  graphData.value = props.data;
+  dataType.value = props.dataType;
+  d3.select('#d3-target').selectAll('*').remove();
+  drawGraph();
+});
+
+// watch(
+//   () => props.data,
+//   (newData) => {
+//     graphData.value = newData;
+//     console.log('data', graphData.value);
+//     d3.select('#d3-target').selectAll('*').remove();
+//     drawGraph();
+//   },
+//   { deep: true }
+// );
+
+const drawGraph = () => {
+  console.log('Drawing graph\n');
+  console.log('graphData:', graphData.value);
+
+  graphData.value.forEach((d: any) => {
+    d.date = new Date(d.date);
+  });
+
   let margin, width, height, yaxis;
   if (isMobile) {
     margin = { top: 10, right: 10, bottom: 30, left: 45 };
@@ -34,17 +68,6 @@ onMounted(() => {
     yaxis = { x: -125, y: -50 };
   }
 
-  // const data = (switch (dataType) {
-  //           case 'distance':
-  //             return y(d.distance);
-  //           case 'flights':
-  //             return y(d.flights);
-  //           case 'steps':
-  //             return y(d.steps);
-  //           default:
-  //             return y(d.distance);
-  //         })
-
   const svg = d3
     .select('div')
     .select('#d3-target')
@@ -56,7 +79,7 @@ onMounted(() => {
 
   const x = d3
     .scaleUtc()
-    .domain(d3.extent(data, (d) => d.date))
+    .domain(d3.extent(graphData.value, (d) => d.date))
     .range([0, width]);
   svg
     .append('g')
@@ -65,8 +88,9 @@ onMounted(() => {
 
   const y = d3
     .scaleLinear()
-    .domain([0, d3.max(data, (d) => d.distance)])
+    .domain([0, d3.max(graphData.value, (d) => d[dataType])])
     .range([height, 0]);
+
   const yAxis = svg.append('g').call(d3.axisLeft(y));
 
   yAxis
@@ -79,9 +103,14 @@ onMounted(() => {
     .attr('fill', '#ffffff')
     .text('Distance (miles)');
 
+  graphData.value.forEach((d: any) => {
+    if (isNaN(d.date)) console.error('Invalid date:', d.date);
+    if (isNaN(d[dataType.value])) console.error(`Invalid ${dataType}:`, d);
+  });
+
   const line = svg
     .append('path')
-    .datum(data)
+    .datum(graphData.value)
     .attr('fill', 'none')
     .attr('stroke', 'steelblue')
     .attr('stroke-width', 1.5)
@@ -89,25 +118,12 @@ onMounted(() => {
       'd',
       d3
         .line()
-        .x(function (d) {
+        .x(function (d: any) {
           return x(d.date);
         })
-        .y(function (d) {
-          return y(d.distance);
+        .y(function (d: any) {
+          return y(d[dataType]);
         })
-      // .y((d) => {
-      //   // Use the dataType prop to determine which property to use
-      //   switch (this.dataType) {
-      //     case 'distance':
-      //       return y(d.distance);
-      //     case 'flights':
-      //       return y(d.flights);
-      //     case 'steps':
-      //       return y(d.steps);
-      //     default:
-      //       return y(d.distance);
-      //   }
-      // })
     );
 
   const totalLength = line.node().getTotalLength();
@@ -119,5 +135,5 @@ onMounted(() => {
     .duration(2500)
     .ease(d3.easeLinear)
     .attr('stroke-dashoffset', 0);
-});
+};
 </script>
