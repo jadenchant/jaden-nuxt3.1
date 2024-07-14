@@ -40,7 +40,7 @@ export default defineEventHandler(async (event: any) => {
 
       let flightsData;
 
-      if (!hasData.get('flights')) {
+      if (hasData.get('flights')) {
         flightsData = new Flights({
           date: flights.data[0].date,
           flights: flights.data[0].qty,
@@ -56,7 +56,7 @@ export default defineEventHandler(async (event: any) => {
 
       let stepsData;
 
-      if (!hasData.get('steps')) {
+      if (hasData.get('steps')) {
         stepsData = new Steps({
           date: steps.data[0].date,
           steps: 0,
@@ -72,7 +72,7 @@ export default defineEventHandler(async (event: any) => {
 
       let distanceData;
 
-      if (!hasData.get('distance')) {
+      if (hasData.get('distance')) {
         distanceData = new Distances({
           date: distance.data[0].date,
           distance: round(distance.data[0].qty),
