@@ -5,9 +5,9 @@ export default defineEventHandler(async (event: any) => {
   console.log('POST /api/health');
 
   try {
-    if (event._path?.substring(23) !== process.env.HEALTH_API) {
-      console.log('path', event._path);
-      console.log('api:', event._path?.substring(23));
+    const health_api_key = getHeader(event, 'HEALTH_API');
+
+    if (process.env.HEALTH_API !== health_api_key) {
       throw new Error('INVALID API KEY');
     } else {
       const body = await readBody(event);
