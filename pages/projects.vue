@@ -38,4 +38,13 @@
 definePageMeta({
   title: 'Projects',
 });
+
+useSeoMeta({
+  title: 'Projects',
+  ogTitle: 'Jaden Chant Projects',
+  author: 'Jaden Chant',
+  description: "Jaden Chant's Web and Class Projects",
+  ogDescription: "Jaden Chant's Web and Class Projects",
+  ogImage: 'https://jadenchant.com/_ipx/w_1500/images/jaden_nyc.png',
+});
 </script>

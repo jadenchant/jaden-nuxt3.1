@@ -1,7 +1,7 @@
 import { Distances } from '../../models';
 
 export default defineEventHandler(async (event) => {
-  console.log('Get Distance');
+  console.log('Get Prev Day Distance');
 
   try {
     const data = await Distances.getPrev();
@@ -17,8 +17,9 @@ export default defineEventHandler(async (event) => {
     console.dir(error);
     event.node.res.statusCode = 500;
     return {
-      code: 'Error',
-      message: 'Server Error',
+      code: '500',
+      message: 'SERVER ERROR',
+      details: error,
     };
   }
 });

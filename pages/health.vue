@@ -50,6 +50,15 @@ definePageMeta({
   title: 'Health Data',
 });
 
+useSeoMeta({
+  title: 'Health Data',
+  ogTitle: 'Jaden Chant Health Data',
+  author: 'Jaden Chant',
+  description: "Jaden Chant's Walking Distance, Steps, and Flights Data",
+  ogDescription: "Jaden Chant's Walking Distance, Steps, and Flights Data",
+  ogImage: 'https://jadenchant.com/_ipx/w_1500/images/jaden_nyc.png',
+});
+
 let graphData = ref([]);
 let graphDataType = ref('');
 

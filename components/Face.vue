@@ -40,14 +40,9 @@ onLoop(({ delta, elapsed }) => {
           cast-shadow
         />
         <TresMesh>
-          <!-- <Suspense>
-            <primitive :object="scene" />
-          </Suspense> -->
-
           <Suspense>
             <GLTFModel ref="modelRef" path="/models/face.glb" draco />
           </Suspense>
-          <!-- <TresMeshBasicMaterial /> -->
         </TresMesh>
       </TresCanvas>
     </div>

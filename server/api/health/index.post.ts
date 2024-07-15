@@ -38,6 +38,12 @@ export default defineEventHandler(async (event: any) => {
         }
       }
 
+      const hasAnyData = [...hasData.values()].some(Boolean);
+
+      if (!hasAnyData) {
+        throw new Error('NO DATA POSTED');
+      }
+
       let flightsData;
 
       if (hasData.get('flights')) {
@@ -96,8 +102,9 @@ export default defineEventHandler(async (event: any) => {
     console.dir(error);
     event.node.res.statusCode = 500;
     return {
-      code: '500 SERVER ERROR',
-      message: error,
+      code: '500',
+      message: 'SERVER ERROR',
+      details: error,
     };
   }
 });

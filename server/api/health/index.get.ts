@@ -1,7 +1,7 @@
 import { Distances, Flights, Steps } from '../../models';
 
 export default defineEventHandler(async (event) => {
-  console.log('Get All Health Data');
+  console.log('Get All Prev Day Health Data');
 
   try {
     const distance = await Distances.getPrev();
@@ -34,8 +34,9 @@ export default defineEventHandler(async (event) => {
     console.dir(error);
     event.node.res.statusCode = 500;
     return {
-      code: 'Error',
-      message: 'Server Error',
+      code: '500',
+      message: 'SERVER ERROR',
+      details: error,
     };
   }
 });

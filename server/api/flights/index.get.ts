@@ -1,7 +1,7 @@
 import { Flights } from '../../models';
 
 export default defineEventHandler(async (event) => {
-  console.log('Get Flights');
+  console.log('Get Prev Day Flights');
 
   try {
     const data = await Flights.getPrev();
@@ -17,8 +17,9 @@ export default defineEventHandler(async (event) => {
     console.dir(error);
     event.node.res.statusCode = 500;
     return {
-      code: 'Error',
-      message: 'Server Error',
+      code: '500',
+      message: 'SERVER ERROR',
+      details: error,
     };
   }
 });
