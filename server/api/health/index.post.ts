@@ -59,7 +59,7 @@ export default defineEventHandler(async (event: any) => {
       if (hasData.get('steps')) {
         stepsData = new Steps({
           date: steps.data[0].date,
-          steps: 0,
+          steps: steps.data[0].qty,
           units: 'steps',
         });
       } else {
