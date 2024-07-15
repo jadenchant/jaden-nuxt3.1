@@ -1,47 +1,45 @@
 <template>
   <title>Health Data</title>
-  <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">
+  <h2 class="text-2xl md:text-4xl mb-4 lg:ml-4">
     Health Data {{ formatDate() }}
   </h2>
-  <div class="lg:flex z-50">
-    <div>
-      <div v-if="!prevError">
-        <div class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
-          <div
-            class="cursor-pointer show-graph"
-            @click="fetchGraphData('/api/distances/30days')"
-          >
-            <p class="mb-4 show-graph-text">
-              Distance: {{ prevData?.distance.distance }} mi
-            </p>
-          </div>
-          <div
-            class="cursor-pointer show-graph"
-            @click="fetchGraphData('/api/flights/30days')"
-          >
-            <p class="mb-4 show-graph-text">
-              Flights: {{ prevData?.flights.flights }} flights
-            </p>
-          </div>
-          <div
-            class="cursor-pointer show-graph"
-            @click="fetchGraphData('/api/steps/30days')"
-          >
-            <p class="mb-4 show-graph-text">
-              Steps: {{ prevData?.steps.steps }} steps
-            </p>
-          </div>
-        </div>
+  <div class="lg:flex relative z-10">
+    <div v-if="!prevError" class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
+      <div
+        class="show-graph w-60 lg:w-72 cursor-pointer"
+        @click="fetchGraphData('/api/distances/30days')"
+      >
+        <p class="show-graph-text py-2 lg:py-4">
+          Distance: {{ prevData?.distance.distance }} mi
+        </p>
       </div>
-      <p v-if="prevError">Error: {{ prevError.message }}</p>
+      <div
+        class="show-graph w-60 lg:w-72 cursor-pointer"
+        @click="fetchGraphData('/api/steps/30days')"
+      >
+        <p class="show-graph-text py-2 lg:py-4">
+          Steps: {{ prevData?.steps.steps.toLocaleString() }} steps
+        </p>
+      </div>
+      <div
+        class="show-graph w-60 lg:w-72 cursor-pointer"
+        @click="fetchGraphData('/api/flights/30days')"
+      >
+        <p class="show-graph-text py-2 lg:py-4">
+          Flights: {{ prevData?.flights.flights }} flights
+        </p>
+      </div>
     </div>
-    <div class="ml-4 lg:ml-20">
-      <!-- <HealthGraph
+  </div>
+
+  <p v-if="prevError">Error: {{ prevError.message }}</p>
+
+  <div class="ml-4 lg:ml-20">
+    <!-- <HealthGraph
         v-if="graphData"
         :data="graphData"
         :dataType="graphDataType"
       /> -->
-    </div>
   </div>
 </template>
 
