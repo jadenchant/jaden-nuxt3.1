@@ -3,7 +3,7 @@
   <h2 class="text-2xl md:text-4xl mb-4 lg:ml-4">
     Health Data {{ formatDate() }}
   </h2>
-  <div class="lg:flex relative z-10">
+  <div class="relative lg:flex z-10">
     <div v-if="!prevError" class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
       <div
         class="show-graph w-60 lg:w-72 cursor-pointer"
@@ -30,16 +30,14 @@
         </p>
       </div>
     </div>
-  </div>
-
-  <p v-if="prevError">Error: {{ prevError.message }}</p>
-
-  <div class="ml-4 lg:ml-20">
-    <!-- <HealthGraph
+    <p v-if="prevError">Error: {{ prevError.message }}</p>
+    <div class="ml-4 mt-4 lg:ml-20">
+      <HealthGraph
         v-if="graphData"
         :data="graphData"
         :dataType="graphDataType"
-      /> -->
+      />
+    </div>
   </div>
 </template>
 
