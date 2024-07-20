@@ -28,4 +28,4 @@ Previous Nuxt version 3.0 worked with any `node v16.14.2`
 
 - [ ] Improve website speed
 
-- [ ] Fix moblie 30 day health data
+- [x] Temp fix moblie 30 day health data
