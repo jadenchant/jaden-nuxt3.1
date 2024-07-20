@@ -1,22 +1,22 @@
 <template>
   <ClientOnly>
-    <div class="h-96 w-[350px] z-10">
+    <div class="h-96 lg:h-[400px] w-full lg:w-[500px] xl:w-[600px] z-10">
       <TresCanvas v-bind="gl">
         <TresPerspectiveCamera
-          :position="[0, 2.3, 6.2]"
+          :position="[0, 0, props.zPos]"
           :fov="75"
           :near="0.1"
           :far="1000"
         />
         <TresAmbientLight :color="0xffffff" :intensity="0.75" />
         <TresDirectionalLight
-          :position="[0, 8, 5]"
-          :intensity="1"
+          :position="[0, 8, 20]"
+          :intensity="1.4"
           cast-shadow
         />
         <TresMesh>
           <Suspense>
-            <GLTFModel ref="modelRef" path="/models/face.glb" draco />
+            <GLTFModel ref="modelRef" :path="props.modelPath" draco />
           </Suspense>
         </TresMesh>
       </TresCanvas>
@@ -25,6 +25,12 @@
 </template>
 
 <script setup lang="ts">
+const props = defineProps<{
+  modelPath: string;
+  zPos: number;
+  turnRight?: boolean;
+  tiltRight?: boolean;
+}>();
 import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from 'three';
 import { GLTFModel } from '@tresjs/cientos';
 const { onLoop } = useRenderLoop();
@@ -38,13 +44,32 @@ const gl = {
 
 const modelRef = shallowRef<THREE.Object3D>();
 
+watch(
+  modelRef,
+  (newValue, oldValue) => {
+    if (modelRef.value && newValue !== oldValue) {
+      modelRef.value.value.rotation.x = Math.PI / 2;
+      if (props.tiltRight) {
+        modelRef.value.value.rotation.y = Math.PI / 8;
+      } else {
+        modelRef.value.value.rotation.y = -Math.PI / 8;
+      }
+    }
+  },
+  { immediate: true }
+);
+
 onLoop(({ delta, elapsed }) => {
   if (modelRef.value) {
-    let baseline = delta * 0.7;
+    let baseline = delta * 0.9;
     if (elapsed < 2.5) {
       baseline *= 2.5 / elapsed;
     }
-    modelRef.value.value.rotation.y -= baseline;
+    if (props.turnRight) {
+      modelRef.value.value.rotation.z -= baseline;
+    } else {
+      modelRef.value.value.rotation.z += baseline;
+    }
   }
 });
 </script>

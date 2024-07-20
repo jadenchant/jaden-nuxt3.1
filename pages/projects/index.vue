@@ -28,9 +28,16 @@
     />
     <ProjectCard
       title="Reverse Word Search Games"
-      img="images/reverse-word-search.png"
       desc="Reverse word search games in multiple languages that can be played in terminal."
+      img="images/reverse-word-search.png"
       link="https://github.com/jadenchant/reverse-word-search"
+    />
+    <ProjectCard
+      title="3D Flower Models"
+      desc="Simple 3D models of flowers created with Tinkercad."
+      img="images/flowers.png"
+      link="/projects/flowers"
+      internal
     />
   </div>
 </template>
