@@ -26,6 +26,8 @@ Previous Nuxt version 3.0 worked with any `node v16.14.2`
 
 ## ToDo List
 
+- [ ] Improve website speed
+
 - [ ] Fix moblie 30 day health data
 
-- [ ] Add flower 3D renderings
+- [ ] Fix mobile scroll on flower page

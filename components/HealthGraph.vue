@@ -33,9 +33,6 @@ onUpdated(() => {
 });
 
 const drawGraph = () => {
-  // console.log('Drawing graph\n');
-  // console.log('graphData:', graphData.value);
-
   graphData.value.forEach((d: any) => {
     d.date = new Date(d.date);
   });

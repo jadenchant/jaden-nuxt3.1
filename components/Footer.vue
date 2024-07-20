@@ -18,20 +18,10 @@
         ><nuxt-icon name="github" class="icon" filled
       /></NuxtLink>
     </div>
-    <!-- <div class="flex justify-center align-middle p-4">
-      <p class="mr-2 mt-1 text-md md:text-lg">Made with</p>
-      <NuxtLink
-        to="https://nuxt.com/"
-        target="_blank"
-        class="flex items-center"
-      >
-        <img src="/images/nuxt.png" alt="Nuxt3" class="h-4 md:h-5" />
-      </NuxtLink>
-    </div> -->
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
 <style>
 .icon-lg .icon svg {
