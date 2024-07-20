@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'node-server',
     plugins: ['~/server/index.ts'],
+    compressPublicAssets: true,
   },
 
   modules: ['@nuxt/image', 'nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device'],
