@@ -73,22 +73,26 @@ const drawGraph = () => {
   svg
     .append('g')
     .attr('transform', 'translate(0,' + height + ')')
-    .call(d3.axisBottom(x));
+    .call(d3.axisBottom(x))
+    .style('font-size', isMobile ? '5px' : '12px');
 
   const y = d3
     .scaleLinear()
     .domain([0, d3.max(graphData.value, (d: any) => d[dataType.value])])
     .range([height, 0]);
 
-  const yAxis = svg.append('g').call(d3.axisLeft(y));
+  const yAxis = svg
+    .append('g')
+    .call(d3.axisLeft(y))
+    .style('font-size', isMobile ? '10px' : '12px');
 
   yAxis
     .append('text')
-    .style('font-size', '14px')
+    .style('font-size', isMobile ? '12px' : '14px')
     .attr('transform', 'rotate(-90)')
     .attr('y', yaxis.y)
     .attr('x', yaxis.x)
-    .attr('dy', '0.2em')
+    .attr('dy', '0.1em')
     .attr('text-anchor', 'end')
     .attr('fill', '#ffffff')
     .text(() => {

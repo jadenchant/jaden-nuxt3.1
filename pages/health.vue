@@ -31,7 +31,7 @@
       </div>
     </div>
     <p v-if="prevError">Error: {{ prevError.message }}</p>
-    <div class="ml-4 mt-4 lg:ml-20">
+    <div class="mt-4 lg:ml-20">
       <HealthGraph
         v-if="graphData"
         :data="graphData"
