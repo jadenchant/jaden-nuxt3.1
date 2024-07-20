@@ -1,7 +1,9 @@
 <template>
   <ClientOnly>
-    <div class="h-96 lg:h-[400px] w-full lg:w-[500px] xl:w-[600px] z-10">
-      <TresCanvas v-bind="gl">
+    <div
+      class="h-96 lg:h-[400px] w-full lg:w-[500px] xl:w-[600px] z-10 touch-auto"
+    >
+      <TresCanvas v-bind="gl" class="!touch-auto">
         <TresPerspectiveCamera
           :position="[0, 0, props.zPos]"
           :fov="75"

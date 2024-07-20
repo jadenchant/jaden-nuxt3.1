@@ -4,7 +4,7 @@
       <NuxtLink
         v-if="$device.isMobile"
         to="/"
-        class="text-5xl font-bold mr-4 relative -bottom-1"
+        class="text-5xl font-bold mr-6 relative -bottom-1"
         >JC</NuxtLink
       >
       <NuxtLink
@@ -16,6 +16,7 @@
       <ul class="flex items-end text-2xl md:text-3xl lg:text-4xl">
         <li>
           <NuxtLink
+            v-if="!$device.isMobile"
             to="/"
             class="mr-5 md:mr-4 lg:mr-12 relative -bottom-1 hover:underline"
             >Home</NuxtLink

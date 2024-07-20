@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="link"
-    class="flex flex-col justify-between h-72 lg:h-80 w-96 p-2 border-2 rounded bg-gray-700 z-10"
+    class="flex flex-col justify-between h-72 lg:h-80 w-80 md:w-96 p-2 border-2 rounded bg-gray-700 z-10"
     :target="internal ? '_self' : '_blank'"
   >
     <div class="flex-grow flex flex-col justify-center items-center">
@@ -16,7 +16,7 @@
 
     <div class="justify-self-end">
       <h2 class="text-lg md:text-2xl mt-1">{{ title }}</h2>
-      <p class="text-sm mt-1">
+      <p class="text-xs md:text-sm mt-1">
         {{ desc }}
       </p>
     </div>
