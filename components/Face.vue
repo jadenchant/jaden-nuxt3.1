@@ -8,7 +8,7 @@
           :near="0.1"
           :far="1000"
         />
-        <TresAmbientLight :color="0xffffff" :intensity="0.75" />
+        <TresAmbientLight :color="new Color(0xffffff)" :intensity="0.75" />
         <TresDirectionalLight
           :position="new Vector3(0, 8, 5)"
           :intensity="1"
@@ -16,7 +16,12 @@
         />
         <TresMesh>
           <Suspense>
-            <GLTFModel ref="modelRef" path="/models/face.glb" draco />
+            <GLTFModel
+              ref="modelRef"
+              path="/models/face.glb"
+              draco
+              @error="onModelError"
+            />
           </Suspense>
         </TresMesh>
       </TresCanvas>
@@ -26,7 +31,13 @@
 
 <script setup lang="ts">
 import * as THREE from 'three';
-import { BasicShadowMap, NoToneMapping, SRGBColorSpace, Vector3 } from 'three';
+import {
+  BasicShadowMap,
+  NoToneMapping,
+  SRGBColorSpace,
+  Vector3,
+  Color,
+} from 'three';
 import { GLTFModel } from '@tresjs/cientos';
 const { onLoop } = useRenderLoop();
 const gl = {
@@ -37,15 +48,21 @@ const gl = {
   toneMapping: NoToneMapping,
 };
 
-const modelRef = shallowRef<THREE.Object3D>();
+const modelRef = shallowRef<THREE.Object3D | null>(null);
+
+const onModelError = (error: Error) => {
+  console.error('Error loading model:', error);
+};
 
 onLoop(({ delta, elapsed }) => {
-  if (modelRef && modelRef.value && modelRef.value.value) {
+  if (modelRef.value) {
     let baseline = delta * 0.7;
     if (elapsed < 2.5) {
       baseline *= 2.5 / elapsed;
     }
-    modelRef.value.value.rotation.y -= baseline;
+    if (modelRef.value.rotation) {
+      modelRef.value.rotation.y -= baseline;
+    }
   }
 });
 </script>
