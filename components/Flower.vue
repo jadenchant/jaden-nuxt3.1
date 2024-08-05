@@ -7,14 +7,14 @@
     >
       <TresCanvas v-bind="gl" class="!touch-auto">
         <TresPerspectiveCamera
-          :position="[0, 0, props.zPos]"
+          :position="new Vector3(0, 0, props.zPos)"
           :fov="75"
           :near="0.1"
           :far="1000"
         />
         <TresAmbientLight :color="0xffffff" :intensity="0.75" />
         <TresDirectionalLight
-          :position="[0, 8, 20]"
+          :position="new Vector3(0, 8, 20)"
           :intensity="1.4"
           cast-shadow
         />
@@ -36,7 +36,8 @@ const props = defineProps<{
   turnRight?: boolean;
   tiltRight?: boolean;
 }>();
-import { BasicShadowMap, NoToneMapping, SRGBColorSpace } from 'three';
+import * as THREE from 'three';
+import { BasicShadowMap, NoToneMapping, SRGBColorSpace, Vector3 } from 'three';
 import { GLTFModel } from '@tresjs/cientos';
 const { onLoop } = useRenderLoop();
 const gl = {
