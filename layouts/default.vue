@@ -11,6 +11,7 @@
       alt="Jaden Chant"
       class="fixed right-0 bottom-0 z-0 md:w-[650px] lg:w-[750px]"
       sizes="sm:375px md:500px lg:750px"
+      format="webp"
       preload
     />
   </div>

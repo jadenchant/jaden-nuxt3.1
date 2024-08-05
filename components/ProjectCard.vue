@@ -11,6 +11,7 @@
         :alt="props.alt"
         class="max-h-52"
         sizes="sm:250px lg:300px"
+        format="webp"
         preload
       />
     </div>

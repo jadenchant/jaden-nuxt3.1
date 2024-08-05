@@ -8,6 +8,7 @@
         to="https://www.linkedin.com/in/jaden-chant/"
         target="_blank"
         class="flex items-center mr-3 md:mr-5"
+        aria-label="LinkedIn"
       >
         <nuxt-icon name="linkedin" class="icon" filled />
       </NuxtLink>
@@ -15,6 +16,7 @@
         to="https://github.com/jadenchant"
         target="_blank"
         class="flex items-center ml-3 md:ml-5"
+        aria-label="GitHub"
         ><nuxt-icon name="github" class="icon" filled
       /></NuxtLink>
     </div>
