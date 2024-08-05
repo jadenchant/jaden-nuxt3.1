@@ -12,6 +12,8 @@ Can't use Pinia with this version of Nuxt anyways.
 Documentation of Nuxt is atrocious, not a single useful example.
 Small community of developers, not as much support.
 
+Background Color: #374151
+
 ## Deployment
 
 Autodeploy to Google Cloud Run

@@ -5,7 +5,7 @@
     src="/images/jaden_nyc.png"
     alt="Jaden Chant"
     class="absolute z-0 right-0 bottom-0"
-    sizes="sm:500px md:750px"
+    sizes="sm:500px"
     preload
   />
   <div class="relative z-30">
