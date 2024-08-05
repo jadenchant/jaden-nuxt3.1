@@ -1,31 +1,29 @@
 <template>
-  <ClientOnly>
-    <NuxtLink
-      :to="props.link"
-      target="_blank"
-      class="h-96 lg:h-[400px] w-full lg:w-[500px] xl:w-[600px] z-10"
-    >
-      <TresCanvas v-bind="gl" class="!touch-auto">
-        <TresPerspectiveCamera
-          :position="new Vector3(0, 0, props.zPos)"
-          :fov="75"
-          :near="0.1"
-          :far="1000"
-        />
-        <TresAmbientLight :color="0xffffff" :intensity="0.75" />
-        <TresDirectionalLight
-          :position="new Vector3(0, 8, 20)"
-          :intensity="1.4"
-          cast-shadow
-        />
-        <TresMesh>
-          <Suspense>
-            <GLTFModel ref="modelRef" :path="props.modelPath" draco />
-          </Suspense>
-        </TresMesh>
-      </TresCanvas>
-    </NuxtLink>
-  </ClientOnly>
+  <NuxtLink
+    :to="props.link"
+    target="_blank"
+    class="h-96 lg:h-[400px] w-full lg:w-[500px] xl:w-[600px] z-10"
+  >
+    <TresCanvas v-bind="gl" class="!touch-auto">
+      <TresPerspectiveCamera
+        :position="new Vector3(0, 0, props.zPos)"
+        :fov="75"
+        :near="0.1"
+        :far="1000"
+      />
+      <TresAmbientLight :color="new Color(0xffffff)" :intensity="0.75" />
+      <TresDirectionalLight
+        :position="new Vector3(0, 8, 20)"
+        :intensity="1.4"
+        cast-shadow
+      />
+      <TresMesh>
+        <Suspense>
+          <GLTFModel ref="modelRef" :path="props.modelPath" draco />
+        </Suspense>
+      </TresMesh>
+    </TresCanvas>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -37,7 +35,13 @@ const props = defineProps<{
   tiltRight?: boolean;
 }>();
 import * as THREE from 'three';
-import { BasicShadowMap, NoToneMapping, SRGBColorSpace, Vector3 } from 'three';
+import {
+  BasicShadowMap,
+  NoToneMapping,
+  SRGBColorSpace,
+  Vector3,
+  Color,
+} from 'three';
 import { GLTFModel } from '@tresjs/cientos';
 const { onLoop } = useRenderLoop();
 const gl = {
