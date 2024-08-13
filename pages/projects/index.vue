@@ -10,6 +10,13 @@
       link="https://github.com/jadenchant/stolaf-pos-form"
     />
     <ProjectCard
+      title="Jaden's Website"
+      desc="This website created using Nuxt3.js, MongoDB, Tailwind, Health Auto Export, Tres.js, and D3.js."
+      img="images/jaden-web.png"
+      alt="Jaden Chant's Website"
+      link="https://github.com/jadenchant/jaden-nuxt3"
+    />
+    <ProjectCard
       title="MLB Statistics"
       desc="Shiny app for MLB Most Valuable Player, Rookie of the Year, and Cy Young award statistics."
       img="images/mlb-stats.png"
@@ -29,6 +36,13 @@
       img="images/nfl-stats.png"
       alt="NFL Fantasy Football Statistics Linear Regression Model Next Season Predictions"
       link="https://jadenchant.github.io/pages/projects/nfl_fantasy_pt/"
+    />
+    <ProjectCard
+      title="Data Science Mini Projects"
+      desc="DS projects like maps and text analysis using R and many R packages including tidyverse and ggplot."
+      img="images/miniproject-usmap.png"
+      alt="Data Science Mini Project US Map"
+      link="https://jadenchant.github.io/pages/maps/us_states.html"
     />
     <ProjectCard
       title="Reverse Word Search Games"
