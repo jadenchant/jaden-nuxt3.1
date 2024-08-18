@@ -18,12 +18,12 @@
         MN.
       </p>
       <p class="mb-4">
-        If you would like to contact me, feel free to message me on
+        If you would like to contact me, feel free to send me an email at 
         <NuxtLink
-          to="https://www.linkedin.com/in/jaden-chant/"
+          to="mailto:contact@jadenchant.com"
           target="_blank"
           class="underline"
-          >LinkedIn</NuxtLink
+          >contact@jadenchant.com</NuxtLink
         >!
       </p>
       <p>
