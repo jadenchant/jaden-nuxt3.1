@@ -17,13 +17,6 @@
       link="https://github.com/jadenchant/jaden-nuxt3"
     />
     <ProjectCard
-      title="MLB Statistics"
-      desc="Shiny app for MLB Most Valuable Player, Rookie of the Year, and Cy Young award statistics."
-      img="images/mlb-stats.png"
-      alt="MLB Statistics Shiny App Dashboard"
-      link="https://jadenchant.github.io/pages/projects/mlb/"
-    />
-    <ProjectCard
       title="IMDB Review Sentiment Prediction"
       desc="Long Short Term Memory Machine Learning model used to predict sentiment from IMDB movie reviews."
       img="images/lstm-epoch.png"
@@ -38,18 +31,30 @@
       link="https://jadenchant.github.io/pages/projects/nfl_fantasy_pt/"
     />
     <ProjectCard
+      title="MLB Statistics"
+      desc="Shiny app for MLB Most Valuable Player, Rookie of the Year, and Cy Young award statistics."
+      img="images/mlb-stats.png"
+      alt="MLB Statistics Shiny App Dashboard"
+      link="https://jadenchant.github.io/pages/projects/mlb/"
+    />
+    <ProjectCard
+      title="Project 2025 Text Analysis"
+      desc="Collecting text data from the Project 2025 PDF using Python and doing analysis with R packages."
+      img="images/project2025.png"
+      alt="Sentiment analysis from Project 2025"
+      link="https://jadenchant.github.io/pages/projects/project_2025/"
+    />
+    <ProjectCard
+      title="FactCheck.org's SciCheck Article Text Analysis"
+      desc="Collecting text data from FactCheck.org using rvest."
+      link="https://jadenchant.github.io/pages/projects/scicheck/"
+    />
+    <ProjectCard
       title="Data Science Mini Projects"
       desc="DS projects like maps and text analysis using R and many R packages including tidyverse and ggplot."
       img="images/miniproject-usmap.png"
       alt="Data Science Mini Project US Map"
       link="https://jadenchant.github.io/pages/maps/us_states.html"
-    />
-    <ProjectCard
-      title="Reverse Word Search Games"
-      desc="Reverse word search games in multiple languages that can be played in terminal."
-      img="images/reverse-word-search.png"
-      alt="Reverse Word Search Game"
-      link="https://github.com/jadenchant/reverse-word-search"
     />
     <ProjectCard
       title="3D Flower Models"
@@ -58,6 +63,13 @@
       alt="3D Flower Models"
       link="/projects/flowers"
       internal
+    />
+    <ProjectCard
+      title="Reverse Word Search Games"
+      desc="Reverse word search games in multiple languages that can be played in terminal."
+      img="images/reverse-word-search.png"
+      alt="Reverse Word Search Game"
+      link="https://github.com/jadenchant/reverse-word-search"
     />
   </div>
 </template>
