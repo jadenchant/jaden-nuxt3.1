@@ -31,7 +31,7 @@
       </p>
     </div>
     <br />
-    <div class="flex justify-center w-full"><Face /></div>
+    <!-- <div class="flex justify-center w-full"><Face /></div> -->
   </div>
 </template>
 
