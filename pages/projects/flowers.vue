@@ -1,6 +1,6 @@
 <template>
   <title>Flowers</title>
-  <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">Flowers</h2>
+  <h1 class="text-2xl md:text-4xl mb-6 lg:ml-4">Flowers</h1>
   <div class="flex flex-col xl:flex-row justify-between align-middle my-4">
     <Flower
       model-path="/models/rose.glb"

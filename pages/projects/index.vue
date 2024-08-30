@@ -1,6 +1,6 @@
 <template>
   <title>Projects</title>
-  <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">Projects</h2>
+  <h1 class="text-2xl md:text-4xl mb-6 lg:ml-4">Projects</h1>
   <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 justify-center lg:ml-4">
     <ProjectCard
       title="St. Olaf Program of Study"

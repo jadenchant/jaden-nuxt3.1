@@ -1,38 +1,23 @@
 <template>
   <div class="z-20 w-full mt-4">
-    <div
-      class="flex justify-center align-middle mb-4"
-      :class="$device.isMobile ? 'icon-sm' : 'icon-lg'"
-    >
+    <div class="flex justify-center align-middle mb-4">
       <NuxtLink
         to="https://www.linkedin.com/in/jaden-chant/"
         target="_blank"
         class="flex items-center mr-3 md:mr-5"
         aria-label="LinkedIn"
       >
-        <nuxt-icon name="linkedin" class="icon" filled />
+        <Icon name="mdi:linkedin" :size="$device.isMobile ? '4em' : '6em'" />
       </NuxtLink>
       <NuxtLink
         to="https://github.com/jadenchant"
         target="_blank"
         class="flex items-center ml-3 md:ml-5"
         aria-label="GitHub"
-        ><nuxt-icon name="github" class="icon" filled
+        ><Icon name="mdi:github" :size="$device.isMobile ? '3.8em' : '5.7em'"
       /></NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts"></script>
-
-<style>
-.icon-lg .icon svg {
-  width: 4em;
-  height: 4em;
-}
-
-.icon-sm .icon svg {
-  width: 3.6em;
-  height: 3.6em;
-}
-</style>

@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
   },
 
-  modules: ['@nuxt/image', 'nuxt-icons', '@tresjs/nuxt', '@nuxtjs/device'],
+  modules: ['@nuxt/image', '@tresjs/nuxt', '@nuxtjs/device', '@nuxt/icon'],
   css: ['@/assets/css/main.css'],
 
   postcss: {
@@ -31,6 +31,10 @@ export default defineNuxtConfig({
 
   device: {
     refreshOnResize: true,
+  },
+
+  icon: {
+    customCollections: [{ prefix: 'my-icons', dir: './assets/icons' }],
   },
 
   compatibilityDate: '2024-07-13',

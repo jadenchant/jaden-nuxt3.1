@@ -1,8 +1,8 @@
 <template>
   <title>Health Data</title>
-  <h2 class="text-2xl md:text-4xl mb-4 lg:ml-4">
+  <h1 class="text-2xl md:text-4xl mb-4 lg:ml-4">
     Health Data {{ formatDate() }}
-  </h2>
+  </h1>
   <div class="relative lg:flex z-10">
     <div v-if="!prevError" class="text-xl md:text-2xl lg:text-3xl ml-4 lg:ml-8">
       <div

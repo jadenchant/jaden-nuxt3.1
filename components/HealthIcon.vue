@@ -1,43 +1,48 @@
 <template>
   <div class="absolute z-0" :class="$device.isMobile ? 'icon-sm' : 'icon-lg'">
-    <NuxtIcon name="heart" class="heart" />
-    <NuxtIcon name="pulse" class="pulse pulse1" />
-    <NuxtIcon name="pulse" class="pulse pulse2" />
+    <Icon name="my-icons:heart" mode="svg" class="heart" />
+    <Icon name="my-icons:pulse" mode="svg" class="pulse pulse1" />
+    <Icon name="my-icons:pulse" mode="svg" class="pulse pulse2" />
   </div>
 </template>
 
 <script setup></script>
 
 <style>
-.icon-lg .nuxt-icon.heart svg {
+.icon-lg svg.heart {
   width: 4.6em;
   height: 4.6em;
   margin-right: 2.2em;
   transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
+  fill: white;
 }
 
-.icon-lg:hover .nuxt-icon.heart svg {
+.icon-lg:hover svg.heart {
   width: 4.9em;
   height: 4.9em;
 }
 
-.icon-lg .nuxt-icon.pulse svg {
+.icon-lg svg.pulse {
   width: 4.8em;
   height: 1.8em;
+  z-index: 10;
 }
 
-.icon-lg .pulse {
+.icon-lg svg.pulse {
   top: 1.2em;
   position: absolute;
   z-index: 10;
-  color: #374151;
 }
 
-.icon-lg .pulse1 {
+svg.pulse {
+  stroke: #374151;
+}
+
+.icon-lg svg.pulse1 {
   animation: 1.6s linear infinite running pulse-lg;
 }
 
-.icon-lg .pulse2 {
+.icon-lg svg.pulse2 {
   animation: 1.6s linear 0.8s infinite running pulse-lg;
 }
 
@@ -51,30 +56,31 @@
   }
 }
 
-.icon-sm .nuxt-icon.heart svg {
+.icon-sm svg.heart {
   width: 3em;
   height: 3em;
   margin-right: 1em;
   margin-top: 0.2em;
+  fill: white;
 }
 
-.icon-sm .nuxt-icon.pulse svg {
+.icon-sm svg.pulse {
   width: 3em;
   height: 1.2em;
 }
 
-.icon-sm .pulse {
+.icon-sm svg.pulse {
   position: absolute;
   top: 1em;
   z-index: 10;
-  color: #374151;
+  /* fill: #374151; */
 }
 
-.icon-sm .pulse1 {
+.icon-sm svg.pulse1 {
   animation: 1.6s linear infinite running pulse-sm;
 }
 
-.icon-sm .pulse2 {
+.icon-sm svg.pulse2 {
   animation: 1.6s linear 0.8s infinite running pulse-sm;
 }
 

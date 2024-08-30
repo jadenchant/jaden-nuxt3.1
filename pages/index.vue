@@ -8,8 +8,8 @@
     sizes="sm:500px"
     preload
   />
-  <div class="relative z-30">
-    <h2 class="text-2xl md:text-4xl mb-6 lg:ml-4">Hi, I'm Jaden!</h2>
+  <div class="relative z-10">
+    <h1 class="text-2xl md:text-4xl mb-6 lg:ml-4">Hi, I'm Jaden!</h1>
     <div
       class="flex flex-col text-lg ml-2 md:ml-4 lg:ml-8 lg:h-56 lg:justify-between lg:text-2xl"
     >
@@ -18,7 +18,7 @@
         MN.
       </p>
       <p class="mb-4">
-        If you would like to contact me, feel free to send me an email at 
+        If you would like to contact me, feel free to send me an email at
         <NuxtLink
           to="mailto:contact@jadenchant.com"
           target="_blank"
