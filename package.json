@@ -8,22 +8,22 @@
     "postinstall": "nuxi prepare"
   },
   "devDependencies": {
-    "@nuxt/icon": "^1.5.0",
-    "@nuxtjs/device": "^3.1.1",
+    "@nuxt/icon": "^1.5.1",
+    "@nuxtjs/device": "^3.2.2",
     "@types/d3": "^7.4.3",
     "autoprefixer": "^10.4.14",
-    "nuxt": "^3.13.0",
+    "nuxt": "^3.13.1",
     "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.11"
   },
   "dependencies": {
-    "@nuxt/image": "^1.7.1",
+    "@nuxt/image": "^1.8.0",
     "@tresjs/cientos": "^3.9.0",
-    "@tresjs/nuxt": "^3.0.3",
+    "@tresjs/nuxt": "^3.0.7",
     "d3": "^7.9.0",
     "dotenv": "^16.4.5",
-    "mongoose": "^8.5.5",
-    "npm": "^10.8.2",
-    "three": "^0.167.1"
+    "mongoose": "^8.6.2",
+    "npm": "^10.8.3",
+    "three": "^0.168.0"
   }
 }
