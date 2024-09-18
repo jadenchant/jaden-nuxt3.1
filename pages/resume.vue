@@ -185,13 +185,13 @@
             GO, HTML5, CSS
           </h4>
           <h4 class="mb-2 md:mb-4">
-            Frameworks: React.js, Nuxt.js, React Native, Express.js, Tailwind
-            CSS
+            Frameworks: React.js, Nuxt.js/Vue.js, Tailwind CSS
           </h4>
           <h4 class="mb-2 md:mb-4">
-            Tools: Git, GitHub, MongoDB, GCP, Tableau, Figma, Tidyverse
+            Tools: Git, GitHub, MongoDB, Google Cloud Platform, Tableau, Figma,
+            Tidyverse
           </h4>
-          <h4>Topics: RESTful APIs, Machine Learning</h4>
+          <h4>Topics: RESTful APIs, SEO, Machine Learning</h4>
         </div>
       </div>
     </div>
