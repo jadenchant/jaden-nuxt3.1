@@ -19,7 +19,12 @@
       />
       <TresMesh>
         <Suspense>
-          <GLTFModel ref="modelRef" :path="props.modelPath" draco />
+          <LazyGLTFModel
+            ref="modelRef"
+            :path="props.modelPath"
+            draco
+            @error="onModelError"
+          />
         </Suspense>
       </TresMesh>
     </TresCanvas>
@@ -27,14 +32,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  modelPath: string;
-  zPos: number;
-  link: string;
-  turnRight?: boolean;
-  tiltRight?: boolean;
-}>();
-import * as THREE from 'three';
+import { useRenderLoop } from '@tresjs/core';
 import {
   BasicShadowMap,
   NoToneMapping,
@@ -42,7 +40,13 @@ import {
   Vector3,
   Color,
 } from 'three';
-import { GLTFModel } from '@tresjs/cientos';
+const props = defineProps<{
+  modelPath: string;
+  zPos: number;
+  link: string;
+  turnRight?: boolean;
+  tiltRight?: boolean;
+}>();
 const { onLoop } = useRenderLoop();
 const gl = {
   shadows: true,
@@ -52,34 +56,35 @@ const gl = {
   toneMapping: NoToneMapping,
 };
 
-const modelRef = shallowRef<THREE.Object3D>();
+const modelRef = shallowRef<any>();
 
-watch(
-  modelRef,
-  (newValue, oldValue) => {
-    if (modelRef.value && newValue !== oldValue) {
-      modelRef.value.value.rotation.x = Math.PI / 2;
-      if (props.tiltRight) {
-        modelRef.value.value.rotation.y = Math.PI / 8;
-      } else {
-        modelRef.value.value.rotation.y = -Math.PI / 8;
-      }
-    }
-  },
-  { immediate: true }
-);
+const onModelError = (error: any) => {
+  console.error('Error loading model:', error);
+};
+
+watch(modelRef, (newValue, oldValue) => {
+  if (
+    modelRef.value &&
+    modelRef.value.instance &&
+    modelRef.value.instance.rotation &&
+    newValue !== oldValue
+  ) {
+    modelRef.value.instance.rotation.x = Math.PI / 2;
+    modelRef.value.instance.rotation.y = props.tiltRight
+      ? Math.PI / 8
+      : -Math.PI / 8;
+  }
+});
 
 onLoop(({ delta, elapsed }) => {
-  if (modelRef.value) {
+  if (modelRef.value && modelRef.value.instance) {
     let baseline = delta * 0.9;
     if (elapsed < 2.5) {
       baseline *= 2.5 / elapsed;
     }
-    if (props.turnRight) {
-      modelRef.value.value.rotation.z -= baseline;
-    } else {
-      modelRef.value.value.rotation.z += baseline;
-    }
+    modelRef.value.instance.rotation.z += props.turnRight
+      ? -baseline
+      : baseline;
   }
 });
 </script>

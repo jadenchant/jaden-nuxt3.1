@@ -212,8 +212,6 @@ useSeoMeta({
   description: "Jaden Chant's Resume",
   ogDescription: "Jaden Chant's Resume",
 });
-
-const [courseDropdown, toggleCourseDropdown] = useToggle();
 </script>
 
 <style>

@@ -15,7 +15,7 @@
       />
       <TresMesh>
         <Suspense>
-          <GLTFModel
+          <LazyGLTFModel
             ref="modelRef"
             path="/models/face.glb"
             draco
@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import * as THREE from 'three';
+import { useRenderLoop } from '@tresjs/core';
 import {
   BasicShadowMap,
   NoToneMapping,
@@ -36,7 +36,6 @@ import {
   Vector3,
   Color,
 } from 'three';
-import { GLTFModel } from '@tresjs/cientos';
 const { onLoop } = useRenderLoop();
 const gl = {
   shadows: true,
@@ -46,21 +45,20 @@ const gl = {
   toneMapping: NoToneMapping,
 };
 
-const modelRef = shallowRef<THREE.Object3D | null>(null);
+const modelRef = shallowRef<any>(null);
 
 const onModelError = (error: Error) => {
   console.error('Error loading model:', error);
 };
 
 onLoop(({ delta, elapsed }) => {
-  if (modelRef.value) {
+  if (modelRef.value && modelRef.value.instance) {
     let baseline = delta * 0.7;
     if (elapsed < 2.5) {
       baseline *= 2.5 / elapsed;
     }
-    if (modelRef.value.value.rotation) {
-      modelRef.value.value.rotation.y -= baseline;
-    }
+
+    modelRef.value.instance.rotation.y -= baseline;
   }
 });
 </script>
