@@ -38,8 +38,9 @@
               II, Statistics I
             </h4>
             <h4>
-              Other Fun Courses: Film Noir, Costume and Character Design,
-              Psychopathology
+              Other Fun Courses:
+              <NuxtLink to="film">Film Noir / Intro to Film</NuxtLink>, Costume
+              and Character Design, Psychopathology
             </h4>
           </div>
         </DetailsToggle>
@@ -47,7 +48,11 @@
         <h2 class="text-xl md:text-3xl underline mb-2 lg:mb-4">Internships</h2>
         <div class="mb-2 md:mb-4">
           <div class="flex justify-between text-base md:text-2xl">
-            <h3>Target</h3>
+            <h3>
+              <NuxtLink to="https://www.target.com/finds" target="_blank"
+                >Target</NuxtLink
+              >
+            </h3>
             <h3>June - August 2023</h3>
           </div>
           <div class="flex justify-between md:ml-4">
@@ -83,7 +88,13 @@
         </div>
         <div class="mb-2 md:mb-4">
           <div class="flex justify-between text-base md:text-2xl">
-            <h3>US Bank</h3>
+            <h3>
+              <NuxtLink
+                to="https://www.usbank.com/wealth-management.html"
+                target="_blank"
+                >US Bank</NuxtLink
+              >
+            </h3>
             <h3>June - August 2022</h3>
           </div>
           <div class="flex justify-between md:ml-4">
@@ -117,7 +128,13 @@
         </div>
         <div class="mb-2 md:mb-4">
           <div class="flex justify-between text-base md:text-2xl">
-            <h3>FundraisingATM</h3>
+            <h3>
+              <NuxtLink
+                to="https://www.fundraisingatm.com/index.php"
+                target="_blank"
+                >FundraisingATM</NuxtLink
+              >
+            </h3>
             <h3>May - November 2021</h3>
           </div>
           <div class="flex justify-between md:ml-4">
@@ -150,7 +167,27 @@
         </h2>
         <div class="mb-2 md:mb-4">
           <div class="flex justify-between text-base md:text-2xl">
-            <h3>St. Olaf College</h3>
+            <h3>
+              <NuxtLink
+                to="https://www.allinahealth.org/abbott-northwestern-hospital"
+                target="_blank"
+                >Allina Health</NuxtLink
+              >
+            </h3>
+            <h3>September 2024 - Current</h3>
+          </div>
+          <div class="flex justify-between md:ml-4">
+            <h4>Lab Assistant</h4>
+            <h4>Minneapolis, MN</h4>
+          </div>
+        </div>
+        <div class="mb-2 md:mb-4">
+          <div class="flex justify-between text-base md:text-2xl">
+            <h3>
+              <NuxtLink to="https://wp.stolaf.edu/disco/" target="_blank"
+                >St. Olaf College</NuxtLink
+              >
+            </h3>
             <h3>September 2021 - May 2024</h3>
           </div>
           <div class="flex justify-between md:ml-4">
@@ -181,17 +218,67 @@
         <h2 class="text-xl md:text-3xl underline mb-2 md:mb-4">Skills</h2>
         <div>
           <h4 class="mb-2 md:mb-4">
-            Programming Languages: JavaScript/Typescript, R, Python, C++, SQL,
-            GO, HTML5, CSS
+            Programming Languages:
+            <NuxtLink to="https://www.typescriptlang.org/" target="_blank"
+              >JavaScript/Typescript</NuxtLink
+            >,
+            <NuxtLink to="https://www.r-project.org/" target="_blank"
+              >R</NuxtLink
+            >,
+            <NuxtLink to="https://www.python.org/" target="_blank"
+              >Python</NuxtLink
+            >,
+            <NuxtLink to="https://isocpp.org/" target="_blank">C++</NuxtLink>,
+            <NuxtLink to="https://en.wikipedia.org/wiki/SQL" target="_blank"
+              >SQL</NuxtLink
+            >, <NuxtLink to="https://go.dev/" target="_blank">GO</NuxtLink>,
+            <NuxtLink
+              to="https://developer.mozilla.org/en-US/docs/Web/HTML"
+              target="_blank"
+              >HTML5</NuxtLink
+            >,
+            <NuxtLink
+              to="https://developer.mozilla.org/en-US/docs/Web/CSS"
+              target="_blank"
+              >CSS</NuxtLink
+            >
           </h4>
           <h4 class="mb-2 md:mb-4">
-            Frameworks: React.js, Nuxt.js/Vue.js, Tailwind CSS
+            Frameworks:
+            <NuxtLink to="https://react.dev/" target="_blank">React.js</NuxtLink
+            >,
+            <NuxtLink to="https://nuxt.com/" target="_blank"
+              >Nuxt.js/Vue.js</NuxtLink
+            >,
+            <NuxtLink to="https://tailwindcss.com/" target="_blank"
+              >Tailwind CSS</NuxtLink
+            >
           </h4>
           <h4 class="mb-2 md:mb-4">
-            Tools: Git, GitHub, MongoDB, Google Cloud Platform, Tableau, Figma,
-            Tidyverse
+            Tools:
+            <NuxtLink to="https://git-scm.com/" target="_blank">Git</NuxtLink>,
+            <NuxtLink to="https://github.com/" target="_blank">GitHub</NuxtLink
+            >,
+            <NuxtLink to="https://www.mongodb.com/" target="_blank"
+              >MongoDB</NuxtLink
+            >,
+            <NuxtLink to="https://cloud.google.com/?hl=en" target="_blank"
+              >Google Cloud Platform</NuxtLink
+            >,
+            <NuxtLink to="https://www.tableau.com/" target="_blank"
+              >Tableau</NuxtLink
+            >,
+            <NuxtLink to="https://www.figma.com/" target="_blank"
+              >Figma</NuxtLink
+            >,
+            <NuxtLink to="https://www.tidyverse.org/" target="_blank"
+              >Tidyverse</NuxtLink
+            >
           </h4>
-          <h4>Topics: RESTful APIs, SEO, Machine Learning</h4>
+          <h4>
+            Topics: RESTful APIs, SEO, Machine Learning, Data Scraping, Unit
+            Testing
+          </h4>
         </div>
       </div>
     </div>
@@ -199,8 +286,6 @@
 </template>
 
 <script setup lang="ts">
-import { useToggle } from '~/compostables/useToggle';
-
 definePageMeta({
   title: 'Resume',
 });
