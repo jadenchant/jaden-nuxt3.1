@@ -1,39 +1,36 @@
 <template>
   <title>Faces</title>
-  <div class="flex h-full justify-center items-center">
-    <div class="h-[500px] lg:h-[520px] w-full min-w-[350px] mt-4">
-      <TresCanvas v-bind="gl" class="!touch-auto">
-        <TresPerspectiveCamera
-          :position="new Vector3(0, 1, 7)"
-          :fov="75"
-          :near="0.1"
-          :far="1000"
+
+  <TresCanvas v-bind="gl" class="!touch-auto" window-size>
+    <TresPerspectiveCamera
+      :position="new Vector3(0, 1, 7)"
+      :fov="75"
+      :near="0.1"
+      :far="1000"
+    />
+    <OrbitControls />
+    <TresDirectionalLight
+      :position="new Vector3(1, 8, 5)"
+      :intensity="1"
+      cast-shadow
+    />
+    <TresDirectionalLight
+      :position="new Vector3(0, 0, -5)"
+      :intensity="0.5"
+      cast-shadow
+    />
+    <!-- <TresGridHelper /> -->
+    <TresMesh>
+      <Suspense>
+        <LazyGLTFModel
+          ref="modelRef"
+          path="/models/face.glb"
+          draco
+          @error="onModelError"
         />
-        <OrbitControls />
-        <TresDirectionalLight
-          :position="new Vector3(1, 8, 5)"
-          :intensity="1"
-          cast-shadow
-        />
-        <TresDirectionalLight
-          :position="new Vector3(0, 0, -5)"
-          :intensity="0.5"
-          cast-shadow
-        />
-        <TresGridHelper />
-        <TresMesh>
-          <Suspense>
-            <LazyGLTFModel
-              ref="modelRef"
-              path="/models/face.glb"
-              draco
-              @error="onModelError"
-            />
-          </Suspense>
-        </TresMesh>
-      </TresCanvas>
-    </div>
-  </div>
+      </Suspense>
+    </TresMesh>
+  </TresCanvas>
 </template>
 <script setup lang="ts">
 definePageMeta({
@@ -57,6 +54,6 @@ const onModelError = (error: Error) => {
 };
 
 watch(modelRef, () => {
-  modelRef.value.instance.position.y = -1.7;
+  modelRef.value.instance.position.y = -2;
 });
 </script>
