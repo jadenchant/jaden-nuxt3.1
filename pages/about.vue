@@ -31,7 +31,9 @@
       </p>
     </div>
     <br />
-    <div class="flex justify-center w-full"><Face /></div>
+    <div class="flex justify-center w-full">
+      <NuxtLink to="/face"><Face /></NuxtLink>
+    </div>
   </div>
 </template>
 

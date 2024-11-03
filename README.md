@@ -19,15 +19,3 @@ Background Color: #374151
 Autodeploy to Google Cloud Run
 
 Remember .env variables
-
-## Node Environment Notes
-
-Nuxt version 3.3 (NEED `node v18.15.0`)
-
-Previous Nuxt version 3.0 worked with any `node v16.14.2`
-
-## ToDo List
-
-- [ ] Improve website speed
-
-- [x] Temp fix moblie 30 day health data

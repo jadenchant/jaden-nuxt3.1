@@ -23,21 +23,21 @@
         <li>
           <NuxtLink
             to="/about"
-            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-1 underline md:no-underline md:hover:underline"
+            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-3 underline md:no-underline md:hover:underline"
             >About</NuxtLink
           >
         </li>
         <li>
           <NuxtLink
             to="/projects"
-            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-1 underline md:no-underline md:hover:underline"
+            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-3 underline md:no-underline md:hover:underline"
             >Projects</NuxtLink
           >
         </li>
         <li>
           <NuxtLink
             to="/resume"
-            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-1 underline md:no-underline md:hover:underline"
+            class="mr-5 md:mr-4 lg:mr-12 relative -bottom-3 underline md:no-underline md:hover:underline"
             >Resume</NuxtLink
           >
         </li>
