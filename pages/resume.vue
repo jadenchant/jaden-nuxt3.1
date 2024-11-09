@@ -23,9 +23,14 @@
         <DetailsToggle button-text="Courses">
           <div class="ml-4 mb-4">
             <h4 class="mb-2 md:mb-4">
-              Relevant Computer Science Courses: Senior Capstone, Analysis of
-              Algorithms, Foundations of AI, Programming Languages, Mobile
-              Computing Apps, Software Design, Hardware Design, Ethics in CS
+              Relevant Computer Science Courses:
+              <NuxtLink
+                to="https://github.com/jadenchant/stolaf-pos-form"
+                target="_blank"
+                >Senior Capstone</NuxtLink
+              >, Analysis of Algorithms, Foundations of AI, Programming
+              Languages, Mobile Computing Apps, Software Design, Hardware
+              Design, Ethics in CS
             </h4>
             <h4 class="mb-2 md:mb-4">
               Relevant Mathematics Courses: Multivariable Calculus, Differential
@@ -33,9 +38,19 @@
               Analysis, Linear Algebra
             </h4>
             <h4 class="mb-2 md:mb-4">
-              Relevant Statistics and Data Science Courses: Algorithms for
-              Decision Making, Data Science II, Data Visualization, Statistics
-              II, Statistics I
+              Relevant Statistics and Data Science Courses:
+              <NuxtLink to="https://jadenchant.github.io/pages/projects/lstm/">
+                Algorithms for Decision Making</NuxtLink
+              >,
+              <NuxtLink to="https://jadenchant.github.io/" target="_blank">
+                Data Science II </NuxtLink
+              >, Data Visualization,
+              <NuxtLink
+                to="https://jadenchant.github.io/pages/projects/nfl_fantasy_pt/"
+                target="_blank"
+              >
+                Statistics II</NuxtLink
+              >, Statistics I
             </h4>
             <h4>
               Other Fun Courses:
@@ -119,7 +134,7 @@
                 extraction processes, improving data extraction accuracy
               </li>
               <li>
-                Participated in daily operations following agile methodologies,
+                Participated in daily operations following Agile Workflows,
                 contributing to enhanced team agility and project management
                 effectiveness
               </li>
@@ -180,6 +195,31 @@
             <h4>Lab Assistant</h4>
             <h4>Minneapolis, MN</h4>
           </div>
+          <DetailsToggle class="md:ml-4">
+            <ul class="list-disc ml-4">
+              <li>
+                Receive specimens using
+                <NuxtLink to="https://www.epic.com/software/" target="_blank">
+                  Epic Software
+                </NuxtLink>
+                from Abbott Northwestern Hospital and other Allina Health
+                hospitals and clinics, allowing for improved patient care and
+                specimen tracking
+              </li>
+              <li>
+                Operate
+                <NuxtLink to="https://www.roche.com/" target="_blank">
+                  Roche Laboratory Equipment
+                </NuxtLink>
+                like the Bulk Loading Input Module and other Cobas Equipment,
+                creating a streamlined chemistry workflow
+              </li>
+              <li>
+                Process research specimens using precise centrifugation and
+                aliquotation, improving accuracy and immediacy of results
+              </li>
+            </ul>
+          </DetailsToggle>
         </div>
         <div class="mb-2 md:mb-4">
           <div class="flex justify-between text-base md:text-2xl">
