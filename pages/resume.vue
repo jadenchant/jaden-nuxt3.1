@@ -7,7 +7,7 @@
       <h1 class="text-2xl md:text-4xl mb-6">Resume</h1>
 
       <div class="md:mx-4 lg:mx-6">
-        <h2 class="text-xl md:text-3xl underline mb-2 lg:mb-4">Education</h2>
+        <h2 class="text-xl md:text-3xl underline mb-2 md:mb-4">Education</h2>
 
         <div class="flex justify-between md:text-2xl">
           <h3>St. Olaf College, Northfield, Minnesota</h3>
@@ -60,7 +60,54 @@
           </div>
         </DetailsToggle>
 
-        <h2 class="text-xl md:text-3xl underline mb-2 lg:mb-4">Internships</h2>
+        <h2 class="text-xl md:text-3xl underline mb-2 md:mb-4">
+          Certifications
+        </h2>
+        <div class="w-full mb-6 flex flex-col md:flex-row">
+          <NuxtLink
+            to="https://cp.certmetrics.com/amazon/en/public/verify/credential/67522d4f316243159813896aaeee86ff"
+            target="_blank"
+          >
+            <NuxtImg
+              src="images/aws-certified-cloud-practitioner.png"
+              alt="AWS Certified Cloud Practitioner"
+              sizes="sm:120px md:120px lg:120px"
+              format="webp"
+              preload
+          /></NuxtLink>
+          <div class="w-full flex flex-col justify-center ml-2 lg:ml-4">
+            <div
+              class="hidden md:flex justify-between text-base md:text-2xl lg:mb-1"
+            >
+              <h3>
+                <NuxtLink
+                  to="https://cp.certmetrics.com/amazon/en/public/verify/credential/67522d4f316243159813896aaeee86ff"
+                  target="_blank"
+                  >AWS Certified Cloud Practitioner</NuxtLink
+                >
+              </h3>
+              <h3>December 2024 - Current</h3>
+            </div>
+            <div class="hidden md:flex justify-between">
+              <h4>
+                ID:
+                <NuxtLink
+                  to="https://cp.certmetrics.com/amazon/en/public/verify/credential/67522d4f316243159813896aaeee86ff"
+                  target="_blank"
+                  >67522d4f316243159813896aaeee86ff</NuxtLink
+                >
+              </h4>
+              <h4>
+                Issued by:
+                <NuxtLink to="https://aws.amazon.com/" target="_blank"
+                  >Amazon Web Services</NuxtLink
+                >
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-xl md:text-3xl underline mb-2 md:mb-4">Internships</h2>
         <div class="mb-2 md:mb-4">
           <div class="flex justify-between text-base md:text-2xl">
             <h3>
@@ -177,7 +224,7 @@
           </DetailsToggle>
         </div>
 
-        <h2 class="text-xl md:text-3xl underline mb-2 lg:mb-4">
+        <h2 class="text-xl md:text-3xl underline mb-2 md:mb-4">
           Other Experiences
         </h2>
         <div class="mb-2 md:mb-4">

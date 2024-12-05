@@ -9,7 +9,7 @@
       <NuxtImg
         src="images/rear-window.jpg"
         alt="Rear Window"
-        class="w-full h-full z-10lg:w-[700px]"
+        class="w-full h-full z-10 lg:w-[700px]"
         sizes="sm:250px md:300px lg:700px"
         format="webp"
         preload
