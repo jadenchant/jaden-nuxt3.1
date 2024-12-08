@@ -57,6 +57,11 @@
       link="https://jadenchant.github.io/pages/maps/us_states.html"
     />
     <ProjectCard
+      title="Elevator.zone"
+      desc="Elevator experience created using Three.js"
+      link="https://elevator.zone"
+    />
+    <ProjectCard
       title="3D Flower Models"
       desc="Simple 3D models of flowers created with Tinkercad."
       img="images/flowers.png"

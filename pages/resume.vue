@@ -54,8 +54,12 @@
             </h4>
             <h4>
               Other Fun Courses:
-              <NuxtLink to="film">Film Noir / Intro to Film</NuxtLink>, Costume
-              and Character Design, Psychopathology
+              <NuxtLink to="film" class="py-4"
+                >Film Noir / Intro to Film</NuxtLink
+              >,
+              <NuxtLink to="costume" class="py-4"
+                >Costume and Character Design</NuxtLink
+              >, Psychopathology
             </h4>
           </div>
         </DetailsToggle>
@@ -126,9 +130,13 @@
               <li>
                 Developed critical components of a new internal moderation tool
                 using
-                <span class="font-bold underline">React.js</span> and
-                <span class="font-bold underline">Typescript</span>, enhancing
-                user content management and operational workflow
+                <NuxtLink to="https://react.dev/" target="_blank"
+                  ><span class="font-bold underline">React.js</span></NuxtLink
+                >
+                and
+                <NuxtLink to="https://www.typescriptlang.org/" target="_blank"
+                  ><span class="font-bold underline">Typescript</span></NuxtLink
+                >, enhancing user content management and operational workflow
               </li>
               <li>
                 Engineered and implemented a suite of
@@ -174,7 +182,10 @@
                 Conducted detailed analysis of metadata inconsistencies,
                 optimizing <span class="font-bold underline">SQL</span> table
                 processes and
-                <span class="font-bold underline">Tableau</span> dashboards
+                <NuxtLink to="https://www.tableau.com/" target="_blank"
+                  ><span class="font-bold underline">Tableau</span></NuxtLink
+                >
+                dashboards
               </li>
               <li>
                 Developed and implemented comprehensive test cases for file
@@ -290,13 +301,26 @@
               </li>
               <li>
                 Educated and mentored student interns on 3D printing techniques
-                and design creation using TinkerCad, insighting skill
-                development and innovation
+                and design creation using
+                <NuxtLink to="https://www.tinkercad.com/" target="_blank"
+                  >TinkerCad</NuxtLink
+                >, insighting skill development and innovation
               </li>
               <li>
                 Provided expert guidance on digital and creative projects,
-                utilizing Adobe Creative Suite and ArcGIS to support student
-                project success and skill acquisition
+                utilizing
+                <NuxtLink
+                  to="https://www.adobe.com/products/catalog.html"
+                  target="_blank"
+                  >Adobe Creative Suite</NuxtLink
+                >
+                and
+                <NuxtLink
+                  to="https://www.esri.com/en-us/arcgis/products/arcgis-desktop/overview"
+                  target="_blank"
+                  >ArcGIS</NuxtLink
+                >
+                to support student project success and skill acquisition
               </li>
             </ul>
           </DetailsToggle>
@@ -346,11 +370,16 @@
             <NuxtLink to="https://git-scm.com/" target="_blank">Git</NuxtLink>,
             <NuxtLink to="https://github.com/" target="_blank">GitHub</NuxtLink
             >,
-            <NuxtLink to="https://www.mongodb.com/" target="_blank"
-              >MongoDB</NuxtLink
+            <NuxtLink to="https://aws.amazon.com/" target="_blank">AWS</NuxtLink
             >,
             <NuxtLink to="https://cloud.google.com/?hl=en" target="_blank"
               >Google Cloud Platform</NuxtLink
+            >,
+            <NuxtLink to="https://www.mongodb.com/" target="_blank"
+              >MongoDB</NuxtLink
+            >,
+            <NuxtLink to="https://threejs.org/" target="_blank"
+              >Three.js</NuxtLink
             >,
             <NuxtLink to="https://www.tableau.com/" target="_blank"
               >Tableau</NuxtLink
