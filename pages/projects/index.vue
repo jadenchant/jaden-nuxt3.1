@@ -38,16 +38,18 @@
       link="https://jadenchant.github.io/pages/projects/mlb/"
     />
     <ProjectCard
+      title="Elevator.zone"
+      desc="Elevator experience created using Three.js and Svelte"
+      img="images/elevator.png"
+      alt="Hotel Lobby Elevator"
+      link="https://elevator.zone"
+    />
+    <ProjectCard
       title="Project 2025 Text Analysis"
       desc="Collecting text data from the Project 2025 PDF using Python and doing analysis with R packages."
       img="images/project2025.png"
       alt="Sentiment analysis from Project 2025"
       link="https://jadenchant.github.io/pages/projects/project_2025/"
-    />
-    <ProjectCard
-      title="FactCheck.org's SciCheck Article Text Analysis"
-      desc="Collecting text data from FactCheck.org using rvest."
-      link="https://jadenchant.github.io/pages/projects/scicheck/"
     />
     <ProjectCard
       title="Data Science Mini Projects"
@@ -57,9 +59,9 @@
       link="https://jadenchant.github.io/pages/maps/us_states.html"
     />
     <ProjectCard
-      title="Elevator.zone"
-      desc="Elevator experience created using Three.js"
-      link="https://elevator.zone"
+      title="FactCheck.org's SciCheck Article Text Analysis"
+      desc="Collecting text data from FactCheck.org using rvest."
+      link="https://jadenchant.github.io/pages/projects/scicheck/"
     />
     <ProjectCard
       title="3D Flower Models"

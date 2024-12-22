@@ -23,7 +23,7 @@
       <p class="z-10">
         Software Development Intern @
         <NuxtLink
-          to="https://www.usbank.com/index.html"
+          to="https://www.usbank.com/wealth-management.html"
           target="_blank"
           class="underline"
           >US Bank</NuxtLink
