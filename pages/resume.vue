@@ -289,7 +289,7 @@
             <h3>September 2021 - May 2024</h3>
           </div>
           <div class="flex justify-between md:ml-4">
-            <h4>Digital Scholarship Center Intern Manager</h4>
+            <h4>Digital Scholarship Center Manager</h4>
             <h4>Northfield, MN</h4>
           </div>
           <DetailsToggle class="md:ml-4">

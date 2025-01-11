@@ -19,7 +19,8 @@
       class="fixed w-7 lg:w-8 h-5 -rotate-[24deg] z-10 -right-1 bottom-[167px] lg:bottom-[191px]"
       to="https://youtube.com/playlist?list=PLu-0iCdnPT9nRfpIeYpTJyE9fCArubWPf&si=P2tKtAnHWtaDVLIA"
       target="_blank"
-    ></NuxtLink>
+      ><Icon name="mdi:youtube" size="1.55em" class="bg-gray-400"
+    /></NuxtLink>
   </div>
 </template>
 
