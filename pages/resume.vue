@@ -1,11 +1,9 @@
 <template>
   <title>Resume</title>
   <div
-    class="relative z-10 text-sm md:text-lg lg:mx-4 lg:flex lg:flex-col lg:items-center"
+    class="relative z-10 text-sm md:text-lg lg:mx-4 lg:flex lg:flex-col lg:items-center md:mt-6 lg:mt-8"
   >
     <div class="lg:w-[900px]">
-      <h1 class="text-2xl md:text-4xl mb-6">Resume</h1>
-
       <div class="md:mx-4 lg:mx-6">
         <h2 class="text-xl md:text-3xl underline mb-2 md:mb-4">Education</h2>
 

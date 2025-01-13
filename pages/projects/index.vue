@@ -1,7 +1,8 @@
 <template>
   <title>Projects</title>
-  <h1 class="text-2xl md:text-4xl mb-6 lg:ml-4">Projects</h1>
-  <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 justify-center lg:ml-4">
+  <div
+    class="grid md:grid-cols-2 xl:grid-cols-3 gap-8 justify-center lg:ml-4 md:mt-6 lg:mt-8"
+  >
     <ProjectCard
       title="St. Olaf Program of Study"
       desc="A website that allows for students to plan their major classes. It also allows for faculty to review student choices."

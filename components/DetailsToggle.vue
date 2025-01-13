@@ -20,13 +20,14 @@
         />
       </button>
     </div>
-    <div v-if="isOpen">
+    <div v-if="showContent" :class="isOpen ? 'animate-open' : 'animate-close'">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue';
 import { useToggle } from '~/compostables/useToggle';
 
 const props = defineProps<{
@@ -36,6 +37,17 @@ const props = defineProps<{
 }>();
 
 const [isOpen, toggle] = useToggle(props.initialOpen);
+const showContent = ref(isOpen.value);
+
+watch(isOpen, (newVal) => {
+  if (newVal) {
+    showContent.value = true;
+  } else {
+    setTimeout(() => {
+      showContent.value = false;
+    }, 600);
+  }
+});
 </script>
 
 <style>
@@ -63,5 +75,35 @@ const [isOpen, toggle] = useToggle(props.initialOpen);
   to {
     top: 0em;
   }
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-open {
+  animation: open 0.6s ease-in;
+}
+
+.animate-close {
+  animation: close 0.6s ease-out backwards;
 }
 </style>

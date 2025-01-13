@@ -1,6 +1,6 @@
 <template>
   <title>Costume Design</title>
-  <div class="flex justify-center z-10">
+  <div class="flex flex-col items-center justify-center z-10">
     <NuxtImg
       src="images/fannypack.png"
       alt="Fanny Pack"
@@ -9,6 +9,7 @@
       format="webp"
       preload
     />
+    <h2 class="mt-4 text-3xl">Fanny Khak</h2>
   </div>
 </template>
 <script setup lang="ts">

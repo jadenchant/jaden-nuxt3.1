@@ -1,7 +1,6 @@
 <template>
   <title>About</title>
-  <div class="z-10">
-    <h1 class="text-2xl md:text-4xl mb-6 lg:ml-4">About Me</h1>
+  <div class="z-10 md:mt-6 lg:mt-8">
     <div
       class="flex flex-col lg:align-middle justify-between h-36 md:h-36 ml-2 md:ml-4 md:text-2xl lg:text-center"
     >
