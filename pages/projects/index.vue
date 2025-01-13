@@ -18,6 +18,13 @@
       link="https://github.com/jadenchant/jaden-nuxt3"
     />
     <ProjectCard
+      title="Elevator.zone"
+      desc="Elevator experience created using Three.js and Svelte"
+      img="images/elevator.png"
+      alt="Hotel Lobby Elevator Experience"
+      link="https://elevator.zone"
+    />
+    <ProjectCard
       title="IMDB Review Sentiment Prediction"
       desc="Long Short Term Memory Machine Learning model used to predict sentiment from IMDB movie reviews."
       img="images/lstm-epoch.png"
@@ -39,11 +46,11 @@
       link="https://jadenchant.github.io/pages/projects/mlb/"
     />
     <ProjectCard
-      title="Elevator.zone"
-      desc="Elevator experience created using Three.js and Svelte"
-      img="images/elevator.png"
-      alt="Hotel Lobby Elevator"
-      link="https://elevator.zone"
+      title="Tableu Data Visualizations"
+      desc="Tableu Data Visualizations for Data Viz Class"
+      img="images/dataviz.png"
+      alt="2020 Fatal Collisions by states"
+      link="https://public.tableau.com/app/profile/jadenchant/vizzes"
     />
     <ProjectCard
       title="Project 2025 Text Analysis"
